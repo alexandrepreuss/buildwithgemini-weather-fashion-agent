@@ -1,0 +1,1264 @@
+{
+  "eval_case_results": [
+    {
+      "eval_case_index": 0,
+      "response_candidate_results": [
+        {
+          "response_index": 0,
+          "metric_results": {
+            "custom_response_quality": {
+              "metric_name": "custom_response_quality",
+              "score": 5.0,
+              "explanation": "The model provided a friendly, clear, and comprehensive overview of its capabilities in direct response to the user's greeting and general question. The response accurately reflects the tools and capabilities defined in the agent's system instructions.",
+              "rubric_verdicts": null,
+              "raw_output": null,
+              "error_message": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "eval_case_index": 1,
+      "response_candidate_results": [
+        {
+          "response_index": 0,
+          "metric_results": {
+            "custom_response_quality": {
+              "metric_name": "custom_response_quality",
+              "score": 5.0,
+              "explanation": "The agent accurately retrieved the current weather for San Francisco using the weather tool and provided a clear, direct, and relevant response answering the user's prompt.",
+              "rubric_verdicts": null,
+              "raw_output": null,
+              "error_message": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "eval_case_index": 2,
+      "response_candidate_results": [
+        {
+          "response_index": 0,
+          "metric_results": {
+            "custom_response_quality": {
+              "metric_name": "custom_response_quality",
+              "score": 5.0,
+              "explanation": "The model provided an accurate, concise, and direct answer to the user's question, perfectly matching the expected ground truth.",
+              "rubric_verdicts": null,
+              "raw_output": null,
+              "error_message": null
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "summary_metrics": [
+    {
+      "metric_name": "custom_response_quality",
+      "num_cases_total": 3,
+      "num_cases_valid": 3,
+      "num_cases_error": 0,
+      "mean_score": 5.0,
+      "stdev_score": 0.0,
+      "pass_rate": null
+    }
+  ],
+  "win_rates": null,
+  "evaluation_dataset": [
+    {
+      "bigquery_source": null,
+      "gcs_source": null,
+      "eval_cases": [
+        {
+          "prompt": {
+            "parts": [
+              {
+                "media_resolution": null,
+                "code_execution_result": null,
+                "executable_code": null,
+                "file_data": null,
+                "function_call": null,
+                "function_response": null,
+                "inline_data": null,
+                "text": "Hello, what can you help me with?",
+                "thought": null,
+                "thought_signature": null,
+                "video_metadata": null,
+                "tool_call": null,
+                "tool_response": null,
+                "part_metadata": null,
+                "audio_transcription": null
+              }
+            ],
+            "role": "user"
+          },
+          "responses": [
+            {
+              "response": {
+                "parts": [
+                  {
+                    "media_resolution": null,
+                    "code_execution_result": null,
+                    "executable_code": null,
+                    "file_data": null,
+                    "function_call": null,
+                    "function_response": null,
+                    "inline_data": null,
+                    "text": "Hello! I'm your weather-aware fashion stylist assistant. I can help you look stylish and stay comfortable in any weather! \n\nHere is what I can do for you:\n\n1. **Weather-Based Outfit Recommendations:** Give me a city or location, and I will check the live weather conditions and suggest suitable clothing items and outfits tailored to the temperature and weather (cold, heat, rain, wind, etc.).\n2. **Personalized Style Advice:** I can adapt recommendations to your personal style preferences, favorite colors, or specific dress codes (casual, workwear, streetwear, elegant, etc.).\n3. **Generate Visual Outfits:** If you'd like to visualize a look, I can generate realistic image previews of outfits and share them with you.\n4. **Catalog Management:** I can add new garments or outfits to your personal fashion catalog for future reference.\n\nHow can I assist you today? Feel free to tell me where you are located or what style you're aiming for!",
+                    "thought": null,
+                    "thought_signature": null,
+                    "video_metadata": null,
+                    "tool_call": null,
+                    "tool_response": null,
+                    "part_metadata": null,
+                    "audio_transcription": null
+                  }
+                ],
+                "role": "model"
+              }
+            }
+          ],
+          "reference": null,
+          "system_instruction": null,
+          "conversation_history": null,
+          "rubric_groups": null,
+          "eval_case_id": "greeting",
+          "intermediate_events": null,
+          "agent_info": null,
+          "agent_data": {
+            "agents": {
+              "root_agent": {
+                "agent_id": "root_agent",
+                "agent_type": "LlmAgent",
+                "description": "",
+                "instruction": "You are an intelligent, weather-aware fashion stylist assistant. You help users dress comfortably, stylishly, and appropriately for the weather in any location. When asked for outfit or clothing recommendations, first check the real-time weather using get_weather (if a city/location is mentioned). Then, use get_fashion_recommendations to search the Firestore catalog for suitable items based on the current weather condition and temperature. When requested by the user, you can also register new garments in the catalog using add_fashion_item. When the user asks to see, visualize, or generate an image of a look or outfit, use generate_and_save_outfit_image and share the resulting public image URL. You remember the user's stated preferences, style, and facts from previous conversations using your memory and use them to personalize your advice. Always respond in the language used by the user.",
+                "tools": [
+                  {
+                    "retrieval": null,
+                    "computer_use": null,
+                    "file_search": null,
+                    "google_search": null,
+                    "google_maps": null,
+                    "code_execution": null,
+                    "enterprise_web_search": null,
+                    "function_declarations": [
+                      {
+                        "description": "Gets real-time weather information for a given city or location.\n\nArgs:\n    query: A string containing the city or location to get weather information for (e.g. 'Nova York', 'S\u00e3o Paulo', 'San Francisco').\n\nReturns:\n    A string with the real-time weather conditions for the queried location.",
+                        "name": "get_weather",
+                        "parameters": null,
+                        "parameters_json_schema": {
+                          "properties": {
+                            "query": {
+                              "title": "Query",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "query"
+                          ],
+                          "title": "get_weatherParams",
+                          "type": "object"
+                        },
+                        "response": null,
+                        "response_json_schema": {
+                          "type": "string"
+                        },
+                        "behavior": null
+                      }
+                    ],
+                    "google_search_retrieval": null,
+                    "parallel_ai_search": null,
+                    "url_context": null,
+                    "mcp_servers": null,
+                    "exa_ai_search": null
+                  },
+                  {
+                    "retrieval": null,
+                    "computer_use": null,
+                    "file_search": null,
+                    "google_search": null,
+                    "google_maps": null,
+                    "code_execution": null,
+                    "enterprise_web_search": null,
+                    "function_declarations": [
+                      {
+                        "description": "Simulates getting the current time for a city.\n\nArgs:\n    query: The name of the city to get the current time for.\n\nReturns:\n    A string with the current time information.",
+                        "name": "get_current_time",
+                        "parameters": null,
+                        "parameters_json_schema": {
+                          "properties": {
+                            "query": {
+                              "title": "Query",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "query"
+                          ],
+                          "title": "get_current_timeParams",
+                          "type": "object"
+                        },
+                        "response": null,
+                        "response_json_schema": {
+                          "type": "string"
+                        },
+                        "behavior": null
+                      }
+                    ],
+                    "google_search_retrieval": null,
+                    "parallel_ai_search": null,
+                    "url_context": null,
+                    "mcp_servers": null,
+                    "exa_ai_search": null
+                  },
+                  {
+                    "retrieval": null,
+                    "computer_use": null,
+                    "file_search": null,
+                    "google_search": null,
+                    "google_maps": null,
+                    "code_execution": null,
+                    "enterprise_web_search": null,
+                    "function_declarations": [
+                      {
+                        "description": "Consults the Firestore fashion catalog to retrieve clothing and outfit recommendations based on weather conditions.\n\nArgs:\n    weather_condition: Optional condition like 'chuva', 'frio', 'calor', 'ameno', 'vento'.\n    temperature_c: Optional ambient temperature in Celsius to filter suitable items (matching min_temp_c and max_temp_c).\n    category: Optional clothing category to filter by (e.g. 'outerwear', 'top', 'bottom', 'footwear', 'accessories', 'full_outfit').\n\nReturns:\n    A JSON string listing matching fashion items with descriptions, materials, and styles.",
+                        "name": "get_fashion_recommendations",
+                        "parameters": null,
+                        "parameters_json_schema": {
+                          "properties": {
+                            "weather_condition": {
+                              "type": "string",
+                              "default": null,
+                              "title": "Weather Condition",
+                              "nullable": true
+                            },
+                            "temperature_c": {
+                              "type": "number",
+                              "default": null,
+                              "title": "Temperature C",
+                              "nullable": true
+                            },
+                            "category": {
+                              "type": "string",
+                              "default": null,
+                              "title": "Category",
+                              "nullable": true
+                            }
+                          },
+                          "title": "get_fashion_recommendationsParams",
+                          "type": "object"
+                        },
+                        "response": null,
+                        "response_json_schema": {
+                          "type": "string"
+                        },
+                        "behavior": null
+                      }
+                    ],
+                    "google_search_retrieval": null,
+                    "parallel_ai_search": null,
+                    "url_context": null,
+                    "mcp_servers": null,
+                    "exa_ai_search": null
+                  },
+                  {
+                    "retrieval": null,
+                    "computer_use": null,
+                    "file_search": null,
+                    "google_search": null,
+                    "google_maps": null,
+                    "code_execution": null,
+                    "enterprise_web_search": null,
+                    "function_declarations": [
+                      {
+                        "description": "Adds a new fashion item or outfit to the Firestore weather-fashion catalog.\n\nArgs:\n    name: Name of the garment or outfit (e.g. 'Casaco de L\u00e3 Teddy', 'Jaqueta de Couro').\n    category: Category ('outerwear', 'top', 'bottom', 'footwear', 'accessories', 'full_outfit').\n    weather_condition: Primary weather condition ('frio', 'chuva', 'calor', 'ameno', 'vento').\n    min_temp_c: Minimum recommended temperature in Celsius.\n    max_temp_c: Maximum recommended temperature in Celsius.\n    material: Fabric or material description (e.g. '100% Algod\u00e3o', 'L\u00e3 sint\u00e9tica', 'Couro leg\u00edtimo').\n    style: Style classification (e.g. 'Casual', 'Elegante', 'Streetwear').\n    description: Advice on how and when to wear the item.\n\nReturns:\n    A confirmation string with the registered item ID and details.",
+                        "name": "add_fashion_item",
+                        "parameters": null,
+                        "parameters_json_schema": {
+                          "properties": {
+                            "name": {
+                              "title": "Name",
+                              "type": "string"
+                            },
+                            "category": {
+                              "title": "Category",
+                              "type": "string"
+                            },
+                            "weather_condition": {
+                              "title": "Weather Condition",
+                              "type": "string"
+                            },
+                            "min_temp_c": {
+                              "title": "Min Temp C",
+                              "type": "number"
+                            },
+                            "max_temp_c": {
+                              "title": "Max Temp C",
+                              "type": "number"
+                            },
+                            "material": {
+                              "default": "",
+                              "title": "Material",
+                              "type": "string"
+                            },
+                            "style": {
+                              "default": "",
+                              "title": "Style",
+                              "type": "string"
+                            },
+                            "description": {
+                              "default": "",
+                              "title": "Description",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "name",
+                            "category",
+                            "weather_condition",
+                            "min_temp_c",
+                            "max_temp_c"
+                          ],
+                          "title": "add_fashion_itemParams",
+                          "type": "object"
+                        },
+                        "response": null,
+                        "response_json_schema": {
+                          "type": "string"
+                        },
+                        "behavior": null
+                      }
+                    ],
+                    "google_search_retrieval": null,
+                    "parallel_ai_search": null,
+                    "url_context": null,
+                    "mcp_servers": null,
+                    "exa_ai_search": null
+                  },
+                  {
+                    "retrieval": null,
+                    "computer_use": null,
+                    "file_search": null,
+                    "google_search": null,
+                    "google_maps": null,
+                    "code_execution": null,
+                    "enterprise_web_search": null,
+                    "function_declarations": [
+                      {
+                        "description": "Generates an image of a fashion outfit/look using an AI image model and uploads it to the public Cloud Storage bucket.\n\nArgs:\n    prompt: Detailed visual description of the outfit/clothing to generate (e.g. 'A full-body photograph of a woman wearing a chic yellow trench coat, dark blue denim, and stylish waterproof boots on a rainy street').\n\nReturns:\n    A message with the public URL of the uploaded image or an error description.",
+                        "name": "generate_and_save_outfit_image",
+                        "parameters": null,
+                        "parameters_json_schema": {
+                          "properties": {
+                            "prompt": {
+                              "title": "Prompt",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "prompt"
+                          ],
+                          "title": "generate_and_save_outfit_imageParams",
+                          "type": "object"
+                        },
+                        "response": null,
+                        "response_json_schema": {
+                          "type": "string"
+                        },
+                        "behavior": null
+                      }
+                    ],
+                    "google_search_retrieval": null,
+                    "parallel_ai_search": null,
+                    "url_context": null,
+                    "mcp_servers": null,
+                    "exa_ai_search": null
+                  }
+                ],
+                "sub_agents": []
+              }
+            },
+            "turns": [
+              {
+                "turn_index": 0,
+                "turn_id": "turn_0",
+                "events": [
+                  {
+                    "author": "root_agent",
+                    "content": {
+                      "parts": [
+                        {
+                          "media_resolution": null,
+                          "code_execution_result": null,
+                          "executable_code": null,
+                          "file_data": null,
+                          "function_call": null,
+                          "function_response": null,
+                          "inline_data": null,
+                          "text": "Hello! I'm your weather-aware fashion stylist assistant. I can help you look stylish and stay comfortable in any weather! \n\nHere is what I can do for you:\n\n1. **Weather-Based Outfit Recommendations:** Give me a city or location, and I will check the live weather conditions and suggest suitable clothing items and outfits tailored to the temperature and weather (cold, heat, rain, wind, etc.).\n2. **Personalized Style Advice:** I can adapt recommendations to your personal style preferences, favorite colors, or specific dress codes (casual, workwear, streetwear, elegant, etc.).\n3. **Generate Visual Outfits:** If you'd like to visualize a look, I can generate realistic image previews of outfits and share them with you.\n4. **Catalog Management:** I can add new garments or outfits to your personal fashion catalog for future reference.\n\nHow can I assist you today? Feel free to tell me where you are located or what style you're aiming for!",
+                          "thought": null,
+                          "thought_signature": null,
+                          "video_metadata": null,
+                          "tool_call": null,
+                          "tool_response": null,
+                          "part_metadata": null,
+                          "audio_transcription": null
+                        }
+                      ],
+                      "role": "model"
+                    },
+                    "event_time": null,
+                    "state_delta": null,
+                    "active_tools": null
+                  }
+                ]
+              }
+            ]
+          },
+          "user_scenario": null,
+          "interactions_data_source": null
+        },
+        {
+          "prompt": {
+            "parts": [
+              {
+                "media_resolution": null,
+                "code_execution_result": null,
+                "executable_code": null,
+                "file_data": null,
+                "function_call": null,
+                "function_response": null,
+                "inline_data": null,
+                "text": "What's the weather like in San Francisco?",
+                "thought": null,
+                "thought_signature": null,
+                "video_metadata": null,
+                "tool_call": null,
+                "tool_response": null,
+                "part_metadata": null,
+                "audio_transcription": null
+              }
+            ],
+            "role": "user"
+          },
+          "responses": [
+            {
+              "response": {
+                "parts": [
+                  {
+                    "media_resolution": null,
+                    "code_execution_result": null,
+                    "executable_code": null,
+                    "file_data": null,
+                    "function_call": null,
+                    "function_response": null,
+                    "inline_data": null,
+                    "text": "The current weather in San Francisco is **sunny** with a temperature of **18\u00b0C (65\u00b0F)** (feels like 17\u00b0C). The humidity is at 65%, and there is a light wind of about 8 km/h (5 mph).",
+                    "thought": null,
+                    "thought_signature": null,
+                    "video_metadata": null,
+                    "tool_call": null,
+                    "tool_response": null,
+                    "part_metadata": null,
+                    "audio_transcription": null
+                  }
+                ],
+                "role": "model"
+              }
+            }
+          ],
+          "reference": null,
+          "system_instruction": null,
+          "conversation_history": null,
+          "rubric_groups": null,
+          "eval_case_id": "weather_query",
+          "intermediate_events": null,
+          "agent_info": null,
+          "agent_data": {
+            "agents": {
+              "root_agent": {
+                "agent_id": "root_agent",
+                "agent_type": "LlmAgent",
+                "description": "",
+                "instruction": "You are an intelligent, weather-aware fashion stylist assistant. You help users dress comfortably, stylishly, and appropriately for the weather in any location. When asked for outfit or clothing recommendations, first check the real-time weather using get_weather (if a city/location is mentioned). Then, use get_fashion_recommendations to search the Firestore catalog for suitable items based on the current weather condition and temperature. When requested by the user, you can also register new garments in the catalog using add_fashion_item. When the user asks to see, visualize, or generate an image of a look or outfit, use generate_and_save_outfit_image and share the resulting public image URL. You remember the user's stated preferences, style, and facts from previous conversations using your memory and use them to personalize your advice. Always respond in the language used by the user.",
+                "tools": [
+                  {
+                    "retrieval": null,
+                    "computer_use": null,
+                    "file_search": null,
+                    "google_search": null,
+                    "google_maps": null,
+                    "code_execution": null,
+                    "enterprise_web_search": null,
+                    "function_declarations": [
+                      {
+                        "description": "Gets real-time weather information for a given city or location.\n\nArgs:\n    query: A string containing the city or location to get weather information for (e.g. 'Nova York', 'S\u00e3o Paulo', 'San Francisco').\n\nReturns:\n    A string with the real-time weather conditions for the queried location.",
+                        "name": "get_weather",
+                        "parameters": null,
+                        "parameters_json_schema": {
+                          "properties": {
+                            "query": {
+                              "title": "Query",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "query"
+                          ],
+                          "title": "get_weatherParams",
+                          "type": "object"
+                        },
+                        "response": null,
+                        "response_json_schema": {
+                          "type": "string"
+                        },
+                        "behavior": null
+                      }
+                    ],
+                    "google_search_retrieval": null,
+                    "parallel_ai_search": null,
+                    "url_context": null,
+                    "mcp_servers": null,
+                    "exa_ai_search": null
+                  },
+                  {
+                    "retrieval": null,
+                    "computer_use": null,
+                    "file_search": null,
+                    "google_search": null,
+                    "google_maps": null,
+                    "code_execution": null,
+                    "enterprise_web_search": null,
+                    "function_declarations": [
+                      {
+                        "description": "Simulates getting the current time for a city.\n\nArgs:\n    query: The name of the city to get the current time for.\n\nReturns:\n    A string with the current time information.",
+                        "name": "get_current_time",
+                        "parameters": null,
+                        "parameters_json_schema": {
+                          "properties": {
+                            "query": {
+                              "title": "Query",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "query"
+                          ],
+                          "title": "get_current_timeParams",
+                          "type": "object"
+                        },
+                        "response": null,
+                        "response_json_schema": {
+                          "type": "string"
+                        },
+                        "behavior": null
+                      }
+                    ],
+                    "google_search_retrieval": null,
+                    "parallel_ai_search": null,
+                    "url_context": null,
+                    "mcp_servers": null,
+                    "exa_ai_search": null
+                  },
+                  {
+                    "retrieval": null,
+                    "computer_use": null,
+                    "file_search": null,
+                    "google_search": null,
+                    "google_maps": null,
+                    "code_execution": null,
+                    "enterprise_web_search": null,
+                    "function_declarations": [
+                      {
+                        "description": "Consults the Firestore fashion catalog to retrieve clothing and outfit recommendations based on weather conditions.\n\nArgs:\n    weather_condition: Optional condition like 'chuva', 'frio', 'calor', 'ameno', 'vento'.\n    temperature_c: Optional ambient temperature in Celsius to filter suitable items (matching min_temp_c and max_temp_c).\n    category: Optional clothing category to filter by (e.g. 'outerwear', 'top', 'bottom', 'footwear', 'accessories', 'full_outfit').\n\nReturns:\n    A JSON string listing matching fashion items with descriptions, materials, and styles.",
+                        "name": "get_fashion_recommendations",
+                        "parameters": null,
+                        "parameters_json_schema": {
+                          "properties": {
+                            "weather_condition": {
+                              "type": "string",
+                              "default": null,
+                              "title": "Weather Condition",
+                              "nullable": true
+                            },
+                            "temperature_c": {
+                              "type": "number",
+                              "default": null,
+                              "title": "Temperature C",
+                              "nullable": true
+                            },
+                            "category": {
+                              "type": "string",
+                              "default": null,
+                              "title": "Category",
+                              "nullable": true
+                            }
+                          },
+                          "title": "get_fashion_recommendationsParams",
+                          "type": "object"
+                        },
+                        "response": null,
+                        "response_json_schema": {
+                          "type": "string"
+                        },
+                        "behavior": null
+                      }
+                    ],
+                    "google_search_retrieval": null,
+                    "parallel_ai_search": null,
+                    "url_context": null,
+                    "mcp_servers": null,
+                    "exa_ai_search": null
+                  },
+                  {
+                    "retrieval": null,
+                    "computer_use": null,
+                    "file_search": null,
+                    "google_search": null,
+                    "google_maps": null,
+                    "code_execution": null,
+                    "enterprise_web_search": null,
+                    "function_declarations": [
+                      {
+                        "description": "Adds a new fashion item or outfit to the Firestore weather-fashion catalog.\n\nArgs:\n    name: Name of the garment or outfit (e.g. 'Casaco de L\u00e3 Teddy', 'Jaqueta de Couro').\n    category: Category ('outerwear', 'top', 'bottom', 'footwear', 'accessories', 'full_outfit').\n    weather_condition: Primary weather condition ('frio', 'chuva', 'calor', 'ameno', 'vento').\n    min_temp_c: Minimum recommended temperature in Celsius.\n    max_temp_c: Maximum recommended temperature in Celsius.\n    material: Fabric or material description (e.g. '100% Algod\u00e3o', 'L\u00e3 sint\u00e9tica', 'Couro leg\u00edtimo').\n    style: Style classification (e.g. 'Casual', 'Elegante', 'Streetwear').\n    description: Advice on how and when to wear the item.\n\nReturns:\n    A confirmation string with the registered item ID and details.",
+                        "name": "add_fashion_item",
+                        "parameters": null,
+                        "parameters_json_schema": {
+                          "properties": {
+                            "name": {
+                              "title": "Name",
+                              "type": "string"
+                            },
+                            "category": {
+                              "title": "Category",
+                              "type": "string"
+                            },
+                            "weather_condition": {
+                              "title": "Weather Condition",
+                              "type": "string"
+                            },
+                            "min_temp_c": {
+                              "title": "Min Temp C",
+                              "type": "number"
+                            },
+                            "max_temp_c": {
+                              "title": "Max Temp C",
+                              "type": "number"
+                            },
+                            "material": {
+                              "default": "",
+                              "title": "Material",
+                              "type": "string"
+                            },
+                            "style": {
+                              "default": "",
+                              "title": "Style",
+                              "type": "string"
+                            },
+                            "description": {
+                              "default": "",
+                              "title": "Description",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "name",
+                            "category",
+                            "weather_condition",
+                            "min_temp_c",
+                            "max_temp_c"
+                          ],
+                          "title": "add_fashion_itemParams",
+                          "type": "object"
+                        },
+                        "response": null,
+                        "response_json_schema": {
+                          "type": "string"
+                        },
+                        "behavior": null
+                      }
+                    ],
+                    "google_search_retrieval": null,
+                    "parallel_ai_search": null,
+                    "url_context": null,
+                    "mcp_servers": null,
+                    "exa_ai_search": null
+                  },
+                  {
+                    "retrieval": null,
+                    "computer_use": null,
+                    "file_search": null,
+                    "google_search": null,
+                    "google_maps": null,
+                    "code_execution": null,
+                    "enterprise_web_search": null,
+                    "function_declarations": [
+                      {
+                        "description": "Generates an image of a fashion outfit/look using an AI image model and uploads it to the public Cloud Storage bucket.\n\nArgs:\n    prompt: Detailed visual description of the outfit/clothing to generate (e.g. 'A full-body photograph of a woman wearing a chic yellow trench coat, dark blue denim, and stylish waterproof boots on a rainy street').\n\nReturns:\n    A message with the public URL of the uploaded image or an error description.",
+                        "name": "generate_and_save_outfit_image",
+                        "parameters": null,
+                        "parameters_json_schema": {
+                          "properties": {
+                            "prompt": {
+                              "title": "Prompt",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "prompt"
+                          ],
+                          "title": "generate_and_save_outfit_imageParams",
+                          "type": "object"
+                        },
+                        "response": null,
+                        "response_json_schema": {
+                          "type": "string"
+                        },
+                        "behavior": null
+                      }
+                    ],
+                    "google_search_retrieval": null,
+                    "parallel_ai_search": null,
+                    "url_context": null,
+                    "mcp_servers": null,
+                    "exa_ai_search": null
+                  }
+                ],
+                "sub_agents": []
+              }
+            },
+            "turns": [
+              {
+                "turn_index": 0,
+                "turn_id": "turn_0",
+                "events": [
+                  {
+                    "author": "root_agent",
+                    "content": {
+                      "parts": [
+                        {
+                          "media_resolution": null,
+                          "code_execution_result": null,
+                          "executable_code": null,
+                          "file_data": null,
+                          "function_call": {
+                            "id": "call_542123",
+                            "args": {
+                              "query": "San Francisco"
+                            },
+                            "name": "get_weather",
+                            "partial_args": null,
+                            "will_continue": null
+                          },
+                          "function_response": null,
+                          "inline_data": null,
+                          "text": null,
+                          "thought": null,
+                          "thought_signature": null,
+                          "video_metadata": null,
+                          "tool_call": null,
+                          "tool_response": null,
+                          "part_metadata": null,
+                          "audio_transcription": null
+                        }
+                      ],
+                      "role": "model"
+                    },
+                    "event_time": null,
+                    "state_delta": null,
+                    "active_tools": null
+                  },
+                  {
+                    "author": "root_agent",
+                    "content": {
+                      "parts": [
+                        {
+                          "media_resolution": null,
+                          "code_execution_result": null,
+                          "executable_code": null,
+                          "file_data": null,
+                          "function_call": null,
+                          "function_response": {
+                            "will_continue": null,
+                            "scheduling": null,
+                            "parts": null,
+                            "id": "call_542123",
+                            "name": "get_weather",
+                            "response": {
+                              "result": "Condi\u00e7\u00f5es clim\u00e1ticas atuais para San Francisco: Sunny, 18\u00b0C (65\u00b0F), sensa\u00e7\u00e3o t\u00e9rmica de 17\u00b0C, umidade relativa em 65% e vento a 8 km/h."
+                            }
+                          },
+                          "inline_data": null,
+                          "text": null,
+                          "thought": null,
+                          "thought_signature": null,
+                          "video_metadata": null,
+                          "tool_call": null,
+                          "tool_response": null,
+                          "part_metadata": null,
+                          "audio_transcription": null
+                        }
+                      ],
+                      "role": "user"
+                    },
+                    "event_time": null,
+                    "state_delta": null,
+                    "active_tools": null
+                  },
+                  {
+                    "author": "root_agent",
+                    "content": {
+                      "parts": [
+                        {
+                          "media_resolution": null,
+                          "code_execution_result": null,
+                          "executable_code": null,
+                          "file_data": null,
+                          "function_call": null,
+                          "function_response": null,
+                          "inline_data": null,
+                          "text": "The current weather in San Francisco is **sunny** with a temperature of **18\u00b0C (65\u00b0F)** (feels like 17\u00b0C). The humidity is at 65%, and there is a light wind of about 8 km/h (5 mph).",
+                          "thought": null,
+                          "thought_signature": null,
+                          "video_metadata": null,
+                          "tool_call": null,
+                          "tool_response": null,
+                          "part_metadata": null,
+                          "audio_transcription": null
+                        }
+                      ],
+                      "role": "model"
+                    },
+                    "event_time": null,
+                    "state_delta": null,
+                    "active_tools": null
+                  }
+                ]
+              }
+            ]
+          },
+          "user_scenario": null,
+          "interactions_data_source": null
+        },
+        {
+          "prompt": {
+            "parts": [
+              {
+                "media_resolution": null,
+                "code_execution_result": null,
+                "executable_code": null,
+                "file_data": null,
+                "function_call": null,
+                "function_response": null,
+                "inline_data": null,
+                "text": "What is the capital of France?",
+                "thought": null,
+                "thought_signature": null,
+                "video_metadata": null,
+                "tool_call": null,
+                "tool_response": null,
+                "part_metadata": null,
+                "audio_transcription": null
+              }
+            ],
+            "role": "user"
+          },
+          "responses": [
+            {
+              "response": {
+                "parts": [
+                  {
+                    "media_resolution": null,
+                    "code_execution_result": null,
+                    "executable_code": null,
+                    "file_data": null,
+                    "function_call": null,
+                    "function_response": null,
+                    "inline_data": null,
+                    "text": "The capital of France is Paris.",
+                    "thought": null,
+                    "thought_signature": null,
+                    "video_metadata": null,
+                    "tool_call": null,
+                    "tool_response": null,
+                    "part_metadata": null,
+                    "audio_transcription": null
+                  }
+                ],
+                "role": "model"
+              }
+            }
+          ],
+          "reference": {
+            "response": {
+              "parts": [
+                {
+                  "media_resolution": null,
+                  "code_execution_result": null,
+                  "executable_code": null,
+                  "file_data": null,
+                  "function_call": null,
+                  "function_response": null,
+                  "inline_data": null,
+                  "text": "The capital of France is Paris.",
+                  "thought": null,
+                  "thought_signature": null,
+                  "video_metadata": null,
+                  "tool_call": null,
+                  "tool_response": null,
+                  "part_metadata": null,
+                  "audio_transcription": null
+                }
+              ],
+              "role": "model"
+            }
+          },
+          "system_instruction": null,
+          "conversation_history": null,
+          "rubric_groups": null,
+          "eval_case_id": "capital_lookup",
+          "intermediate_events": null,
+          "agent_info": null,
+          "agent_data": {
+            "agents": {
+              "root_agent": {
+                "agent_id": "root_agent",
+                "agent_type": "LlmAgent",
+                "description": "",
+                "instruction": "You are an intelligent, weather-aware fashion stylist assistant. You help users dress comfortably, stylishly, and appropriately for the weather in any location. When asked for outfit or clothing recommendations, first check the real-time weather using get_weather (if a city/location is mentioned). Then, use get_fashion_recommendations to search the Firestore catalog for suitable items based on the current weather condition and temperature. When requested by the user, you can also register new garments in the catalog using add_fashion_item. When the user asks to see, visualize, or generate an image of a look or outfit, use generate_and_save_outfit_image and share the resulting public image URL. You remember the user's stated preferences, style, and facts from previous conversations using your memory and use them to personalize your advice. Always respond in the language used by the user.",
+                "tools": [
+                  {
+                    "retrieval": null,
+                    "computer_use": null,
+                    "file_search": null,
+                    "google_search": null,
+                    "google_maps": null,
+                    "code_execution": null,
+                    "enterprise_web_search": null,
+                    "function_declarations": [
+                      {
+                        "description": "Gets real-time weather information for a given city or location.\n\nArgs:\n    query: A string containing the city or location to get weather information for (e.g. 'Nova York', 'S\u00e3o Paulo', 'San Francisco').\n\nReturns:\n    A string with the real-time weather conditions for the queried location.",
+                        "name": "get_weather",
+                        "parameters": null,
+                        "parameters_json_schema": {
+                          "properties": {
+                            "query": {
+                              "title": "Query",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "query"
+                          ],
+                          "title": "get_weatherParams",
+                          "type": "object"
+                        },
+                        "response": null,
+                        "response_json_schema": {
+                          "type": "string"
+                        },
+                        "behavior": null
+                      }
+                    ],
+                    "google_search_retrieval": null,
+                    "parallel_ai_search": null,
+                    "url_context": null,
+                    "mcp_servers": null,
+                    "exa_ai_search": null
+                  },
+                  {
+                    "retrieval": null,
+                    "computer_use": null,
+                    "file_search": null,
+                    "google_search": null,
+                    "google_maps": null,
+                    "code_execution": null,
+                    "enterprise_web_search": null,
+                    "function_declarations": [
+                      {
+                        "description": "Simulates getting the current time for a city.\n\nArgs:\n    query: The name of the city to get the current time for.\n\nReturns:\n    A string with the current time information.",
+                        "name": "get_current_time",
+                        "parameters": null,
+                        "parameters_json_schema": {
+                          "properties": {
+                            "query": {
+                              "title": "Query",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "query"
+                          ],
+                          "title": "get_current_timeParams",
+                          "type": "object"
+                        },
+                        "response": null,
+                        "response_json_schema": {
+                          "type": "string"
+                        },
+                        "behavior": null
+                      }
+                    ],
+                    "google_search_retrieval": null,
+                    "parallel_ai_search": null,
+                    "url_context": null,
+                    "mcp_servers": null,
+                    "exa_ai_search": null
+                  },
+                  {
+                    "retrieval": null,
+                    "computer_use": null,
+                    "file_search": null,
+                    "google_search": null,
+                    "google_maps": null,
+                    "code_execution": null,
+                    "enterprise_web_search": null,
+                    "function_declarations": [
+                      {
+                        "description": "Consults the Firestore fashion catalog to retrieve clothing and outfit recommendations based on weather conditions.\n\nArgs:\n    weather_condition: Optional condition like 'chuva', 'frio', 'calor', 'ameno', 'vento'.\n    temperature_c: Optional ambient temperature in Celsius to filter suitable items (matching min_temp_c and max_temp_c).\n    category: Optional clothing category to filter by (e.g. 'outerwear', 'top', 'bottom', 'footwear', 'accessories', 'full_outfit').\n\nReturns:\n    A JSON string listing matching fashion items with descriptions, materials, and styles.",
+                        "name": "get_fashion_recommendations",
+                        "parameters": null,
+                        "parameters_json_schema": {
+                          "properties": {
+                            "weather_condition": {
+                              "type": "string",
+                              "default": null,
+                              "title": "Weather Condition",
+                              "nullable": true
+                            },
+                            "temperature_c": {
+                              "type": "number",
+                              "default": null,
+                              "title": "Temperature C",
+                              "nullable": true
+                            },
+                            "category": {
+                              "type": "string",
+                              "default": null,
+                              "title": "Category",
+                              "nullable": true
+                            }
+                          },
+                          "title": "get_fashion_recommendationsParams",
+                          "type": "object"
+                        },
+                        "response": null,
+                        "response_json_schema": {
+                          "type": "string"
+                        },
+                        "behavior": null
+                      }
+                    ],
+                    "google_search_retrieval": null,
+                    "parallel_ai_search": null,
+                    "url_context": null,
+                    "mcp_servers": null,
+                    "exa_ai_search": null
+                  },
+                  {
+                    "retrieval": null,
+                    "computer_use": null,
+                    "file_search": null,
+                    "google_search": null,
+                    "google_maps": null,
+                    "code_execution": null,
+                    "enterprise_web_search": null,
+                    "function_declarations": [
+                      {
+                        "description": "Adds a new fashion item or outfit to the Firestore weather-fashion catalog.\n\nArgs:\n    name: Name of the garment or outfit (e.g. 'Casaco de L\u00e3 Teddy', 'Jaqueta de Couro').\n    category: Category ('outerwear', 'top', 'bottom', 'footwear', 'accessories', 'full_outfit').\n    weather_condition: Primary weather condition ('frio', 'chuva', 'calor', 'ameno', 'vento').\n    min_temp_c: Minimum recommended temperature in Celsius.\n    max_temp_c: Maximum recommended temperature in Celsius.\n    material: Fabric or material description (e.g. '100% Algod\u00e3o', 'L\u00e3 sint\u00e9tica', 'Couro leg\u00edtimo').\n    style: Style classification (e.g. 'Casual', 'Elegante', 'Streetwear').\n    description: Advice on how and when to wear the item.\n\nReturns:\n    A confirmation string with the registered item ID and details.",
+                        "name": "add_fashion_item",
+                        "parameters": null,
+                        "parameters_json_schema": {
+                          "properties": {
+                            "name": {
+                              "title": "Name",
+                              "type": "string"
+                            },
+                            "category": {
+                              "title": "Category",
+                              "type": "string"
+                            },
+                            "weather_condition": {
+                              "title": "Weather Condition",
+                              "type": "string"
+                            },
+                            "min_temp_c": {
+                              "title": "Min Temp C",
+                              "type": "number"
+                            },
+                            "max_temp_c": {
+                              "title": "Max Temp C",
+                              "type": "number"
+                            },
+                            "material": {
+                              "default": "",
+                              "title": "Material",
+                              "type": "string"
+                            },
+                            "style": {
+                              "default": "",
+                              "title": "Style",
+                              "type": "string"
+                            },
+                            "description": {
+                              "default": "",
+                              "title": "Description",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "name",
+                            "category",
+                            "weather_condition",
+                            "min_temp_c",
+                            "max_temp_c"
+                          ],
+                          "title": "add_fashion_itemParams",
+                          "type": "object"
+                        },
+                        "response": null,
+                        "response_json_schema": {
+                          "type": "string"
+                        },
+                        "behavior": null
+                      }
+                    ],
+                    "google_search_retrieval": null,
+                    "parallel_ai_search": null,
+                    "url_context": null,
+                    "mcp_servers": null,
+                    "exa_ai_search": null
+                  },
+                  {
+                    "retrieval": null,
+                    "computer_use": null,
+                    "file_search": null,
+                    "google_search": null,
+                    "google_maps": null,
+                    "code_execution": null,
+                    "enterprise_web_search": null,
+                    "function_declarations": [
+                      {
+                        "description": "Generates an image of a fashion outfit/look using an AI image model and uploads it to the public Cloud Storage bucket.\n\nArgs:\n    prompt: Detailed visual description of the outfit/clothing to generate (e.g. 'A full-body photograph of a woman wearing a chic yellow trench coat, dark blue denim, and stylish waterproof boots on a rainy street').\n\nReturns:\n    A message with the public URL of the uploaded image or an error description.",
+                        "name": "generate_and_save_outfit_image",
+                        "parameters": null,
+                        "parameters_json_schema": {
+                          "properties": {
+                            "prompt": {
+                              "title": "Prompt",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "prompt"
+                          ],
+                          "title": "generate_and_save_outfit_imageParams",
+                          "type": "object"
+                        },
+                        "response": null,
+                        "response_json_schema": {
+                          "type": "string"
+                        },
+                        "behavior": null
+                      }
+                    ],
+                    "google_search_retrieval": null,
+                    "parallel_ai_search": null,
+                    "url_context": null,
+                    "mcp_servers": null,
+                    "exa_ai_search": null
+                  }
+                ],
+                "sub_agents": []
+              }
+            },
+            "turns": [
+              {
+                "turn_index": 0,
+                "turn_id": "turn_0",
+                "events": [
+                  {
+                    "author": "root_agent",
+                    "content": {
+                      "parts": [
+                        {
+                          "media_resolution": null,
+                          "code_execution_result": null,
+                          "executable_code": null,
+                          "file_data": null,
+                          "function_call": null,
+                          "function_response": null,
+                          "inline_data": null,
+                          "text": "The capital of France is Paris.",
+                          "thought": null,
+                          "thought_signature": null,
+                          "video_metadata": null,
+                          "tool_call": null,
+                          "tool_response": null,
+                          "part_metadata": null,
+                          "audio_transcription": null
+                        }
+                      ],
+                      "role": "model"
+                    },
+                    "event_time": null,
+                    "state_delta": null,
+                    "active_tools": null
+                  }
+                ]
+              }
+            ]
+          },
+          "user_scenario": null,
+          "interactions_data_source": null
+        }
+      ],
+      "eval_dataset_df": null,
+      "candidate_name": null
+    }
+  ],
+  "metadata": {
+    "candidate_names": [
+      "candidate_1"
+    ],
+    "dataset_name": null,
+    "dataset_id": null,
+    "creation_timestamp": "2026-09-23T20:03:06.482698Z",
+    "dataset": [
+      {
+        "prompt_display_text": "Hello, what can you help me with?",
+        "prompt_raw_json": "{\n  \"parts\": [\n    {\n      \"text\": \"Hello, what can you help me with?\"\n    }\n  ],\n  \"role\": \"user\"\n}",
+        "reference": "",
+        "reference_raw_json": "",
+        "response_display_text": "Hello! I'm your weather-aware fashion stylist assistant. I can help you look stylish and stay comfortable in any weather! \n\nHere is what I can do for you:\n\n1. **Weather-Based Outfit Recommendations:** Give me a city or location, and I will check the live weather conditions and suggest suitable clothing items and outfits tailored to the temperature and weather (cold, heat, rain, wind, etc.).\n2. **Personalized Style Advice:** I can adapt recommendations to your personal style preferences, favorite colors, or specific dress codes (casual, workwear, streetwear, elegant, etc.).\n3. **Generate Visual Outfits:** If you'd like to visualize a look, I can generate realistic image previews of outfits and share them with you.\n4. **Catalog Management:** I can add new garments or outfits to your personal fashion catalog for future reference.\n\nHow can I assist you today? Feel free to tell me where you are located or what style you're aiming for!",
+        "response_raw_json": "{\n  \"parts\": [\n    {\n      \"text\": \"Hello! I'm your weather-aware fashion stylist assistant. I can help you look stylish and stay comfortable in any weather! \\n\\nHere is what I can do for you:\\n\\n1. **Weather-Based Outfit Recommendations:** Give me a city or location, and I will check the live weather conditions and suggest suitable clothing items and outfits tailored to the temperature and weather (cold, heat, rain, wind, etc.).\\n2. **Personalized Style Advice:** I can adapt recommendations to your personal style preferences, favorite colors, or specific dress codes (casual, workwear, streetwear, elegant, etc.).\\n3. **Generate Visual Outfits:** If you'd like to visualize a look, I can generate realistic image previews of outfits and share them with you.\\n4. **Catalog Management:** I can add new garments or outfits to your personal fashion catalog for future reference.\\n\\nHow can I assist you today? Feel free to tell me where you are located or what style you're aiming for!\"\n    }\n  ],\n  \"role\": \"model\"\n}",
+        "intermediate_events": null,
+        "agent_data": "{\"agents\": {\"root_agent\": {\"agent_id\": \"root_agent\", \"agent_type\": \"LlmAgent\", \"description\": \"\", \"instruction\": \"You are an intelligent, weather-aware fashion stylist assistant. You help users dress comfortably, stylishly, and appropriately for the weather in any location. When asked for outfit or clothing recommendations, first check the real-time weather using get_weather (if a city/location is mentioned). Then, use get_fashion_recommendations to search the Firestore catalog for suitable items based on the current weather condition and temperature. When requested by the user, you can also register new garments in the catalog using add_fashion_item. When the user asks to see, visualize, or generate an image of a look or outfit, use generate_and_save_outfit_image and share the resulting public image URL. You remember the user's stated preferences, style, and facts from previous conversations using your memory and use them to personalize your advice. Always respond in the language used by the user.\", \"tools\": [{\"function_declarations\": [{\"description\": \"Gets real-time weather information for a given city or location.\\n\\nArgs:\\n    query: A string containing the city or location to get weather information for (e.g. 'Nova York', 'S\u00e3o Paulo', 'San Francisco').\\n\\nReturns:\\n    A string with the real-time weather conditions for the queried location.\", \"name\": \"get_weather\", \"parameters_json_schema\": {\"properties\": {\"query\": {\"title\": \"Query\", \"type\": \"string\"}}, \"required\": [\"query\"], \"title\": \"get_weatherParams\", \"type\": \"object\"}, \"response_json_schema\": {\"type\": \"string\"}}]}, {\"function_declarations\": [{\"description\": \"Simulates getting the current time for a city.\\n\\nArgs:\\n    query: The name of the city to get the current time for.\\n\\nReturns:\\n    A string with the current time information.\", \"name\": \"get_current_time\", \"parameters_json_schema\": {\"properties\": {\"query\": {\"title\": \"Query\", \"type\": \"string\"}}, \"required\": [\"query\"], \"title\": \"get_current_timeParams\", \"type\": \"object\"}, \"response_json_schema\": {\"type\": \"string\"}}]}, {\"function_declarations\": [{\"description\": \"Consults the Firestore fashion catalog to retrieve clothing and outfit recommendations based on weather conditions.\\n\\nArgs:\\n    weather_condition: Optional condition like 'chuva', 'frio', 'calor', 'ameno', 'vento'.\\n    temperature_c: Optional ambient temperature in Celsius to filter suitable items (matching min_temp_c and max_temp_c).\\n    category: Optional clothing category to filter by (e.g. 'outerwear', 'top', 'bottom', 'footwear', 'accessories', 'full_outfit').\\n\\nReturns:\\n    A JSON string listing matching fashion items with descriptions, materials, and styles.\", \"name\": \"get_fashion_recommendations\", \"parameters_json_schema\": {\"properties\": {\"weather_condition\": {\"type\": \"string\", \"default\": null, \"title\": \"Weather Condition\", \"nullable\": true}, \"temperature_c\": {\"type\": \"number\", \"default\": null, \"title\": \"Temperature C\", \"nullable\": true}, \"category\": {\"type\": \"string\", \"default\": null, \"title\": \"Category\", \"nullable\": true}}, \"title\": \"get_fashion_recommendationsParams\", \"type\": \"object\"}, \"response_json_schema\": {\"type\": \"string\"}}]}, {\"function_declarations\": [{\"description\": \"Adds a new fashion item or outfit to the Firestore weather-fashion catalog.\\n\\nArgs:\\n    name: Name of the garment or outfit (e.g. 'Casaco de L\u00e3 Teddy', 'Jaqueta de Couro').\\n    category: Category ('outerwear', 'top', 'bottom', 'footwear', 'accessories', 'full_outfit').\\n    weather_condition: Primary weather condition ('frio', 'chuva', 'calor', 'ameno', 'vento').\\n    min_temp_c: Minimum recommended temperature in Celsius.\\n    max_temp_c: Maximum recommended temperature in Celsius.\\n    material: Fabric or material description (e.g. '100% Algod\u00e3o', 'L\u00e3 sint\u00e9tica', 'Couro leg\u00edtimo').\\n    style: Style classification (e.g. 'Casual', 'Elegante', 'Streetwear').\\n    description: Advice on how and when to wear the item.\\n\\nReturns:\\n    A confirmation string with the registered item ID and details.\", \"name\": \"add_fashion_item\", \"parameters_json_schema\": {\"properties\": {\"name\": {\"title\": \"Name\", \"type\": \"string\"}, \"category\": {\"title\": \"Category\", \"type\": \"string\"}, \"weather_condition\": {\"title\": \"Weather Condition\", \"type\": \"string\"}, \"min_temp_c\": {\"title\": \"Min Temp C\", \"type\": \"number\"}, \"max_temp_c\": {\"title\": \"Max Temp C\", \"type\": \"number\"}, \"material\": {\"default\": \"\", \"title\": \"Material\", \"type\": \"string\"}, \"style\": {\"default\": \"\", \"title\": \"Style\", \"type\": \"string\"}, \"description\": {\"default\": \"\", \"title\": \"Description\", \"type\": \"string\"}}, \"required\": [\"name\", \"category\", \"weather_condition\", \"min_temp_c\", \"max_temp_c\"], \"title\": \"add_fashion_itemParams\", \"type\": \"object\"}, \"response_json_schema\": {\"type\": \"string\"}}]}, {\"function_declarations\": [{\"description\": \"Generates an image of a fashion outfit/look using an AI image model and uploads it to the public Cloud Storage bucket.\\n\\nArgs:\\n    prompt: Detailed visual description of the outfit/clothing to generate (e.g. 'A full-body photograph of a woman wearing a chic yellow trench coat, dark blue denim, and stylish waterproof boots on a rainy street').\\n\\nReturns:\\n    A message with the public URL of the uploaded image or an error description.\", \"name\": \"generate_and_save_outfit_image\", \"parameters_json_schema\": {\"properties\": {\"prompt\": {\"title\": \"Prompt\", \"type\": \"string\"}}, \"required\": [\"prompt\"], \"title\": \"generate_and_save_outfit_imageParams\", \"type\": \"object\"}, \"response_json_schema\": {\"type\": \"string\"}}]}], \"sub_agents\": []}}, \"turns\": [{\"turn_index\": 0, \"turn_id\": \"turn_0\", \"events\": [{\"author\": \"root_agent\", \"content\": {\"parts\": [{\"text\": \"Hello! I'm your weather-aware fashion stylist assistant. I can help you look stylish and stay comfortable in any weather! \\n\\nHere is what I can do for you:\\n\\n1. **Weather-Based Outfit Recommendations:** Give me a city or location, and I will check the live weather conditions and suggest suitable clothing items and outfits tailored to the temperature and weather (cold, heat, rain, wind, etc.).\\n2. **Personalized Style Advice:** I can adapt recommendations to your personal style preferences, favorite colors, or specific dress codes (casual, workwear, streetwear, elegant, etc.).\\n3. **Generate Visual Outfits:** If you'd like to visualize a look, I can generate realistic image previews of outfits and share them with you.\\n4. **Catalog Management:** I can add new garments or outfits to your personal fashion catalog for future reference.\\n\\nHow can I assist you today? Feel free to tell me where you are located or what style you're aiming for!\"}], \"role\": \"model\"}}]}]}"
+      },
+      {
+        "prompt_display_text": "What's the weather like in San Francisco?",
+        "prompt_raw_json": "{\n  \"parts\": [\n    {\n      \"text\": \"What's the weather like in San Francisco?\"\n    }\n  ],\n  \"role\": \"user\"\n}",
+        "reference": "",
+        "reference_raw_json": "",
+        "response_display_text": "The current weather in San Francisco is **sunny** with a temperature of **18\u00b0C (65\u00b0F)** (feels like 17\u00b0C). The humidity is at 65%, and there is a light wind of about 8 km/h (5 mph).",
+        "response_raw_json": "{\n  \"parts\": [\n    {\n      \"text\": \"The current weather in San Francisco is **sunny** with a temperature of **18\u00b0C (65\u00b0F)** (feels like 17\u00b0C). The humidity is at 65%, and there is a light wind of about 8 km/h (5 mph).\"\n    }\n  ],\n  \"role\": \"model\"\n}",
+        "intermediate_events": null,
+        "agent_data": "{\"agents\": {\"root_agent\": {\"agent_id\": \"root_agent\", \"agent_type\": \"LlmAgent\", \"description\": \"\", \"instruction\": \"You are an intelligent, weather-aware fashion stylist assistant. You help users dress comfortably, stylishly, and appropriately for the weather in any location. When asked for outfit or clothing recommendations, first check the real-time weather using get_weather (if a city/location is mentioned). Then, use get_fashion_recommendations to search the Firestore catalog for suitable items based on the current weather condition and temperature. When requested by the user, you can also register new garments in the catalog using add_fashion_item. When the user asks to see, visualize, or generate an image of a look or outfit, use generate_and_save_outfit_image and share the resulting public image URL. You remember the user's stated preferences, style, and facts from previous conversations using your memory and use them to personalize your advice. Always respond in the language used by the user.\", \"tools\": [{\"function_declarations\": [{\"description\": \"Gets real-time weather information for a given city or location.\\n\\nArgs:\\n    query: A string containing the city or location to get weather information for (e.g. 'Nova York', 'S\u00e3o Paulo', 'San Francisco').\\n\\nReturns:\\n    A string with the real-time weather conditions for the queried location.\", \"name\": \"get_weather\", \"parameters_json_schema\": {\"properties\": {\"query\": {\"title\": \"Query\", \"type\": \"string\"}}, \"required\": [\"query\"], \"title\": \"get_weatherParams\", \"type\": \"object\"}, \"response_json_schema\": {\"type\": \"string\"}}]}, {\"function_declarations\": [{\"description\": \"Simulates getting the current time for a city.\\n\\nArgs:\\n    query: The name of the city to get the current time for.\\n\\nReturns:\\n    A string with the current time information.\", \"name\": \"get_current_time\", \"parameters_json_schema\": {\"properties\": {\"query\": {\"title\": \"Query\", \"type\": \"string\"}}, \"required\": [\"query\"], \"title\": \"get_current_timeParams\", \"type\": \"object\"}, \"response_json_schema\": {\"type\": \"string\"}}]}, {\"function_declarations\": [{\"description\": \"Consults the Firestore fashion catalog to retrieve clothing and outfit recommendations based on weather conditions.\\n\\nArgs:\\n    weather_condition: Optional condition like 'chuva', 'frio', 'calor', 'ameno', 'vento'.\\n    temperature_c: Optional ambient temperature in Celsius to filter suitable items (matching min_temp_c and max_temp_c).\\n    category: Optional clothing category to filter by (e.g. 'outerwear', 'top', 'bottom', 'footwear', 'accessories', 'full_outfit').\\n\\nReturns:\\n    A JSON string listing matching fashion items with descriptions, materials, and styles.\", \"name\": \"get_fashion_recommendations\", \"parameters_json_schema\": {\"properties\": {\"weather_condition\": {\"type\": \"string\", \"default\": null, \"title\": \"Weather Condition\", \"nullable\": true}, \"temperature_c\": {\"type\": \"number\", \"default\": null, \"title\": \"Temperature C\", \"nullable\": true}, \"category\": {\"type\": \"string\", \"default\": null, \"title\": \"Category\", \"nullable\": true}}, \"title\": \"get_fashion_recommendationsParams\", \"type\": \"object\"}, \"response_json_schema\": {\"type\": \"string\"}}]}, {\"function_declarations\": [{\"description\": \"Adds a new fashion item or outfit to the Firestore weather-fashion catalog.\\n\\nArgs:\\n    name: Name of the garment or outfit (e.g. 'Casaco de L\u00e3 Teddy', 'Jaqueta de Couro').\\n    category: Category ('outerwear', 'top', 'bottom', 'footwear', 'accessories', 'full_outfit').\\n    weather_condition: Primary weather condition ('frio', 'chuva', 'calor', 'ameno', 'vento').\\n    min_temp_c: Minimum recommended temperature in Celsius.\\n    max_temp_c: Maximum recommended temperature in Celsius.\\n    material: Fabric or material description (e.g. '100% Algod\u00e3o', 'L\u00e3 sint\u00e9tica', 'Couro leg\u00edtimo').\\n    style: Style classification (e.g. 'Casual', 'Elegante', 'Streetwear').\\n    description: Advice on how and when to wear the item.\\n\\nReturns:\\n    A confirmation string with the registered item ID and details.\", \"name\": \"add_fashion_item\", \"parameters_json_schema\": {\"properties\": {\"name\": {\"title\": \"Name\", \"type\": \"string\"}, \"category\": {\"title\": \"Category\", \"type\": \"string\"}, \"weather_condition\": {\"title\": \"Weather Condition\", \"type\": \"string\"}, \"min_temp_c\": {\"title\": \"Min Temp C\", \"type\": \"number\"}, \"max_temp_c\": {\"title\": \"Max Temp C\", \"type\": \"number\"}, \"material\": {\"default\": \"\", \"title\": \"Material\", \"type\": \"string\"}, \"style\": {\"default\": \"\", \"title\": \"Style\", \"type\": \"string\"}, \"description\": {\"default\": \"\", \"title\": \"Description\", \"type\": \"string\"}}, \"required\": [\"name\", \"category\", \"weather_condition\", \"min_temp_c\", \"max_temp_c\"], \"title\": \"add_fashion_itemParams\", \"type\": \"object\"}, \"response_json_schema\": {\"type\": \"string\"}}]}, {\"function_declarations\": [{\"description\": \"Generates an image of a fashion outfit/look using an AI image model and uploads it to the public Cloud Storage bucket.\\n\\nArgs:\\n    prompt: Detailed visual description of the outfit/clothing to generate (e.g. 'A full-body photograph of a woman wearing a chic yellow trench coat, dark blue denim, and stylish waterproof boots on a rainy street').\\n\\nReturns:\\n    A message with the public URL of the uploaded image or an error description.\", \"name\": \"generate_and_save_outfit_image\", \"parameters_json_schema\": {\"properties\": {\"prompt\": {\"title\": \"Prompt\", \"type\": \"string\"}}, \"required\": [\"prompt\"], \"title\": \"generate_and_save_outfit_imageParams\", \"type\": \"object\"}, \"response_json_schema\": {\"type\": \"string\"}}]}], \"sub_agents\": []}}, \"turns\": [{\"turn_index\": 0, \"turn_id\": \"turn_0\", \"events\": [{\"author\": \"root_agent\", \"content\": {\"parts\": [{\"function_call\": {\"id\": \"call_542123\", \"args\": {\"query\": \"San Francisco\"}, \"name\": \"get_weather\"}}], \"role\": \"model\"}}, {\"author\": \"root_agent\", \"content\": {\"parts\": [{\"function_response\": {\"id\": \"call_542123\", \"name\": \"get_weather\", \"response\": {\"result\": \"Condi\u00e7\u00f5es clim\u00e1ticas atuais para San Francisco: Sunny, 18\u00b0C (65\u00b0F), sensa\u00e7\u00e3o t\u00e9rmica de 17\u00b0C, umidade relativa em 65% e vento a 8 km/h.\"}}}], \"role\": \"user\"}}, {\"author\": \"root_agent\", \"content\": {\"parts\": [{\"text\": \"The current weather in San Francisco is **sunny** with a temperature of **18\u00b0C (65\u00b0F)** (feels like 17\u00b0C). The humidity is at 65%, and there is a light wind of about 8 km/h (5 mph).\"}], \"role\": \"model\"}}]}]}"
+      },
+      {
+        "prompt_display_text": "What is the capital of France?",
+        "prompt_raw_json": "{\n  \"parts\": [\n    {\n      \"text\": \"What is the capital of France?\"\n    }\n  ],\n  \"role\": \"user\"\n}",
+        "reference": "The capital of France is Paris.",
+        "reference_raw_json": "{\n  \"parts\": [\n    {\n      \"text\": \"The capital of France is Paris.\"\n    }\n  ],\n  \"role\": \"model\"\n}",
+        "response_display_text": "The capital of France is Paris.",
+        "response_raw_json": "{\n  \"parts\": [\n    {\n      \"text\": \"The capital of France is Paris.\"\n    }\n  ],\n  \"role\": \"model\"\n}",
+        "intermediate_events": null,
+        "agent_data": "{\"agents\": {\"root_agent\": {\"agent_id\": \"root_agent\", \"agent_type\": \"LlmAgent\", \"description\": \"\", \"instruction\": \"You are an intelligent, weather-aware fashion stylist assistant. You help users dress comfortably, stylishly, and appropriately for the weather in any location. When asked for outfit or clothing recommendations, first check the real-time weather using get_weather (if a city/location is mentioned). Then, use get_fashion_recommendations to search the Firestore catalog for suitable items based on the current weather condition and temperature. When requested by the user, you can also register new garments in the catalog using add_fashion_item. When the user asks to see, visualize, or generate an image of a look or outfit, use generate_and_save_outfit_image and share the resulting public image URL. You remember the user's stated preferences, style, and facts from previous conversations using your memory and use them to personalize your advice. Always respond in the language used by the user.\", \"tools\": [{\"function_declarations\": [{\"description\": \"Gets real-time weather information for a given city or location.\\n\\nArgs:\\n    query: A string containing the city or location to get weather information for (e.g. 'Nova York', 'S\u00e3o Paulo', 'San Francisco').\\n\\nReturns:\\n    A string with the real-time weather conditions for the queried location.\", \"name\": \"get_weather\", \"parameters_json_schema\": {\"properties\": {\"query\": {\"title\": \"Query\", \"type\": \"string\"}}, \"required\": [\"query\"], \"title\": \"get_weatherParams\", \"type\": \"object\"}, \"response_json_schema\": {\"type\": \"string\"}}]}, {\"function_declarations\": [{\"description\": \"Simulates getting the current time for a city.\\n\\nArgs:\\n    query: The name of the city to get the current time for.\\n\\nReturns:\\n    A string with the current time information.\", \"name\": \"get_current_time\", \"parameters_json_schema\": {\"properties\": {\"query\": {\"title\": \"Query\", \"type\": \"string\"}}, \"required\": [\"query\"], \"title\": \"get_current_timeParams\", \"type\": \"object\"}, \"response_json_schema\": {\"type\": \"string\"}}]}, {\"function_declarations\": [{\"description\": \"Consults the Firestore fashion catalog to retrieve clothing and outfit recommendations based on weather conditions.\\n\\nArgs:\\n    weather_condition: Optional condition like 'chuva', 'frio', 'calor', 'ameno', 'vento'.\\n    temperature_c: Optional ambient temperature in Celsius to filter suitable items (matching min_temp_c and max_temp_c).\\n    category: Optional clothing category to filter by (e.g. 'outerwear', 'top', 'bottom', 'footwear', 'accessories', 'full_outfit').\\n\\nReturns:\\n    A JSON string listing matching fashion items with descriptions, materials, and styles.\", \"name\": \"get_fashion_recommendations\", \"parameters_json_schema\": {\"properties\": {\"weather_condition\": {\"type\": \"string\", \"default\": null, \"title\": \"Weather Condition\", \"nullable\": true}, \"temperature_c\": {\"type\": \"number\", \"default\": null, \"title\": \"Temperature C\", \"nullable\": true}, \"category\": {\"type\": \"string\", \"default\": null, \"title\": \"Category\", \"nullable\": true}}, \"title\": \"get_fashion_recommendationsParams\", \"type\": \"object\"}, \"response_json_schema\": {\"type\": \"string\"}}]}, {\"function_declarations\": [{\"description\": \"Adds a new fashion item or outfit to the Firestore weather-fashion catalog.\\n\\nArgs:\\n    name: Name of the garment or outfit (e.g. 'Casaco de L\u00e3 Teddy', 'Jaqueta de Couro').\\n    category: Category ('outerwear', 'top', 'bottom', 'footwear', 'accessories', 'full_outfit').\\n    weather_condition: Primary weather condition ('frio', 'chuva', 'calor', 'ameno', 'vento').\\n    min_temp_c: Minimum recommended temperature in Celsius.\\n    max_temp_c: Maximum recommended temperature in Celsius.\\n    material: Fabric or material description (e.g. '100% Algod\u00e3o', 'L\u00e3 sint\u00e9tica', 'Couro leg\u00edtimo').\\n    style: Style classification (e.g. 'Casual', 'Elegante', 'Streetwear').\\n    description: Advice on how and when to wear the item.\\n\\nReturns:\\n    A confirmation string with the registered item ID and details.\", \"name\": \"add_fashion_item\", \"parameters_json_schema\": {\"properties\": {\"name\": {\"title\": \"Name\", \"type\": \"string\"}, \"category\": {\"title\": \"Category\", \"type\": \"string\"}, \"weather_condition\": {\"title\": \"Weather Condition\", \"type\": \"string\"}, \"min_temp_c\": {\"title\": \"Min Temp C\", \"type\": \"number\"}, \"max_temp_c\": {\"title\": \"Max Temp C\", \"type\": \"number\"}, \"material\": {\"default\": \"\", \"title\": \"Material\", \"type\": \"string\"}, \"style\": {\"default\": \"\", \"title\": \"Style\", \"type\": \"string\"}, \"description\": {\"default\": \"\", \"title\": \"Description\", \"type\": \"string\"}}, \"required\": [\"name\", \"category\", \"weather_condition\", \"min_temp_c\", \"max_temp_c\"], \"title\": \"add_fashion_itemParams\", \"type\": \"object\"}, \"response_json_schema\": {\"type\": \"string\"}}]}, {\"function_declarations\": [{\"description\": \"Generates an image of a fashion outfit/look using an AI image model and uploads it to the public Cloud Storage bucket.\\n\\nArgs:\\n    prompt: Detailed visual description of the outfit/clothing to generate (e.g. 'A full-body photograph of a woman wearing a chic yellow trench coat, dark blue denim, and stylish waterproof boots on a rainy street').\\n\\nReturns:\\n    A message with the public URL of the uploaded image or an error description.\", \"name\": \"generate_and_save_outfit_image\", \"parameters_json_schema\": {\"properties\": {\"prompt\": {\"title\": \"Prompt\", \"type\": \"string\"}}, \"required\": [\"prompt\"], \"title\": \"generate_and_save_outfit_imageParams\", \"type\": \"object\"}, \"response_json_schema\": {\"type\": \"string\"}}]}], \"sub_agents\": []}}, \"turns\": [{\"turn_index\": 0, \"turn_id\": \"turn_0\", \"events\": [{\"author\": \"root_agent\", \"content\": {\"parts\": [{\"text\": \"The capital of France is Paris.\"}], \"role\": \"model\"}}]}]}"
+      }
+    ]
+  },
+  "agent_info": null
+}

@@ -1,0 +1,10 @@
+# Authoring notes, not participant-facing
+context.md
+
+# macOS noise
+.DS_Store
+
+# record-demo artifacts (Playwright install + temp recording dir)
+node_modules/
+package-lock.json
+.video_tmp/

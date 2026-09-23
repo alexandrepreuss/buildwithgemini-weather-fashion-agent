@@ -1,0 +1,368 @@
+=== Starting server at 2026-09-23T17:58:00.385595+00:00 ===
+Command: uv run uvicorn app.fast_api_app:app --host 127.0.0.1 --port 18081
+CWD: /config/Desktop/BuildWithGemini
+=== Started server process 316270 ===
+warning: `VIRTUAL_ENV=/lsiopy` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead
+/config/Desktop/BuildWithGemini/.venv/lib/python3.13/site-packages/google/adk/cli/fast_api.py:278: UserWarning: [EXPERIMENTAL] InMemoryCredentialService: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.
+  credential_service = InMemoryCredentialService()
+/config/Desktop/BuildWithGemini/.venv/lib/python3.13/site-packages/google/adk/auth/credential_service/in_memory_credential_service.py:33: UserWarning: [EXPERIMENTAL] BaseCredentialService: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.
+  super().__init__()
+INFO:     Started server process [316274]
+INFO:     Waiting for application startup.
+/config/Desktop/BuildWithGemini/app/app_utils/a2a.py:141: UserWarning: [EXPERIMENTAL] AgentCardBuilder: ADK Implementation for A2A support (A2aAgentExecutor, RemoteA2aAgent and corresponding supporting components etc.) is in experimental mode and is subject to breaking changes. A2A protocol and SDK are themselves not experimental. Once it's stable enough the experimental mode will be removed. Your feedback is welcome.
+  agent_card = await AgentCardBuilder(
+/config/Desktop/BuildWithGemini/app/app_utils/a2a.py:149: UserWarning: [EXPERIMENTAL] A2aAgentExecutor: ADK Implementation for A2A support (A2aAgentExecutor, RemoteA2aAgent and corresponding supporting components etc.) is in experimental mode and is subject to breaking changes. A2A protocol and SDK are themselves not experimental. Once it's stable enough the experimental mode will be removed. Your feedback is welcome.
+  agent_executor=A2aAgentExecutor(runner=runner),
+/config/Desktop/BuildWithGemini/.venv/lib/python3.13/site-packages/google/adk/a2a/executor/a2a_agent_executor.py:76: UserWarning: [EXPERIMENTAL] A2aAgentExecutorConfig: ADK Implementation for A2A support (A2aAgentExecutor, RemoteA2aAgent and corresponding supporting components etc.) is in experimental mode and is subject to breaking changes. A2A protocol and SDK are themselves not experimental. Once it's stable enough the experimental mode will be removed. Your feedback is welcome.
+  self._config = config or A2aAgentExecutorConfig()
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:18081 (Press CTRL+C to quit)
+INFO:     127.0.0.1:52304 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52310 - "GET /dev-ui/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52316 - "POST /apps/app/users/cli-user/sessions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52326 - "POST /run_sse HTTP/1.1" 200 OK
+/config/Desktop/BuildWithGemini/.venv/lib/python3.13/site-packages/google/adk/models/llm_request.py:298: UserWarning: [EXPERIMENTAL] feature FeatureName.JSON_SCHEMA_FOR_FUNC_DECL is enabled.
+  declaration = tool._get_declaration()
+Failed to export span batch code: 403, reason: Forbidden
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [316274]
+=== Starting server at 2026-09-23T17:58:58.985764+00:00 ===
+Command: uv run uvicorn app.fast_api_app:app --host 127.0.0.1 --port 18080
+CWD: /config/Desktop/BuildWithGemini
+=== Started server process 316516 ===
+warning: `VIRTUAL_ENV=/lsiopy` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead
+/config/Desktop/BuildWithGemini/.venv/lib/python3.13/site-packages/google/adk/cli/fast_api.py:278: UserWarning: [EXPERIMENTAL] InMemoryCredentialService: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.
+  credential_service = InMemoryCredentialService()
+/config/Desktop/BuildWithGemini/.venv/lib/python3.13/site-packages/google/adk/auth/credential_service/in_memory_credential_service.py:33: UserWarning: [EXPERIMENTAL] BaseCredentialService: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.
+  super().__init__()
+INFO:     Started server process [316519]
+INFO:     Waiting for application startup.
+/config/Desktop/BuildWithGemini/app/app_utils/a2a.py:141: UserWarning: [EXPERIMENTAL] AgentCardBuilder: ADK Implementation for A2A support (A2aAgentExecutor, RemoteA2aAgent and corresponding supporting components etc.) is in experimental mode and is subject to breaking changes. A2A protocol and SDK are themselves not experimental. Once it's stable enough the experimental mode will be removed. Your feedback is welcome.
+  agent_card = await AgentCardBuilder(
+/config/Desktop/BuildWithGemini/app/app_utils/a2a.py:149: UserWarning: [EXPERIMENTAL] A2aAgentExecutor: ADK Implementation for A2A support (A2aAgentExecutor, RemoteA2aAgent and corresponding supporting components etc.) is in experimental mode and is subject to breaking changes. A2A protocol and SDK are themselves not experimental. Once it's stable enough the experimental mode will be removed. Your feedback is welcome.
+  agent_executor=A2aAgentExecutor(runner=runner),
+/config/Desktop/BuildWithGemini/.venv/lib/python3.13/site-packages/google/adk/a2a/executor/a2a_agent_executor.py:76: UserWarning: [EXPERIMENTAL] A2aAgentExecutorConfig: ADK Implementation for A2A support (A2aAgentExecutor, RemoteA2aAgent and corresponding supporting components etc.) is in experimental mode and is subject to breaking changes. A2A protocol and SDK are themselves not experimental. Once it's stable enough the experimental mode will be removed. Your feedback is welcome.
+  self._config = config or A2aAgentExecutorConfig()
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:18080 (Press CTRL+C to quit)
+INFO:     127.0.0.1:51184 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51198 - "GET /dev-ui/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51200 - "POST /apps/app/users/cli-user/sessions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51212 - "POST /run_sse HTTP/1.1" 200 OK
+/config/Desktop/BuildWithGemini/.venv/lib/python3.13/site-packages/google/adk/models/llm_request.py:298: UserWarning: [EXPERIMENTAL] feature FeatureName.JSON_SCHEMA_FOR_FUNC_DECL is enabled.
+  declaration = tool._get_declaration()
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [316519]
+=== Starting server at 2026-09-23T18:41:07.032582+00:00 ===
+Command: uv run uvicorn app.fast_api_app:app --host 127.0.0.1 --port 18080
+CWD: /config/Desktop/BuildWithGemini
+=== Started server process 328479 ===
+warning: `VIRTUAL_ENV=/lsiopy` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead
+/config/Desktop/BuildWithGemini/.venv/lib/python3.13/site-packages/google/adk/cli/fast_api.py:278: UserWarning: [EXPERIMENTAL] InMemoryCredentialService: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.
+  credential_service = InMemoryCredentialService()
+/config/Desktop/BuildWithGemini/.venv/lib/python3.13/site-packages/google/adk/auth/credential_service/in_memory_credential_service.py:33: UserWarning: [EXPERIMENTAL] BaseCredentialService: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.
+  super().__init__()
+INFO:     Started server process [328482]
+INFO:     Waiting for application startup.
+/config/Desktop/BuildWithGemini/app/app_utils/a2a.py:169: UserWarning: [EXPERIMENTAL] AgentCardBuilder: ADK Implementation for A2A support (A2aAgentExecutor, RemoteA2aAgent and corresponding supporting components etc.) is in experimental mode and is subject to breaking changes. A2A protocol and SDK are themselves not experimental. Once it's stable enough the experimental mode will be removed. Your feedback is welcome.
+  agent_card = await AgentCardBuilder(
+/config/Desktop/BuildWithGemini/app/app_utils/a2a.py:177: UserWarning: [EXPERIMENTAL] A2aAgentExecutor: ADK Implementation for A2A support (A2aAgentExecutor, RemoteA2aAgent and corresponding supporting components etc.) is in experimental mode and is subject to breaking changes. A2A protocol and SDK are themselves not experimental. Once it's stable enough the experimental mode will be removed. Your feedback is welcome.
+  agent_executor=A2aAgentExecutor(runner=runner),
+/config/Desktop/BuildWithGemini/.venv/lib/python3.13/site-packages/google/adk/a2a/executor/a2a_agent_executor.py:76: UserWarning: [EXPERIMENTAL] A2aAgentExecutorConfig: ADK Implementation for A2A support (A2aAgentExecutor, RemoteA2aAgent and corresponding supporting components etc.) is in experimental mode and is subject to breaking changes. A2A protocol and SDK are themselves not experimental. Once it's stable enough the experimental mode will be removed. Your feedback is welcome.
+  self._config = config or A2aAgentExecutorConfig()
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:18080 (Press CTRL+C to quit)
+INFO:     127.0.0.1:49904 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49916 - "GET /dev-ui/ HTTP/1.1" 200 OK
+/config/Desktop/BuildWithGemini/.venv/lib/python3.13/site-packages/fastapi/routing.py:352: UserWarning: [EXPERIMENTAL] get_adk_app_info: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.
+  return await dependant.call(**values)
+/config/Desktop/BuildWithGemini/.venv/lib/python3.13/site-packages/google/adk/utils/agent_info.py:59: UserWarning: [EXPERIMENTAL] feature FeatureName.JSON_SCHEMA_FOR_FUNC_DECL is enabled.
+  declarations = (tool._get_declaration() for tool in final_tools)
+INFO:     127.0.0.1:49928 - "GET /apps/app/app-info HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49934 - "POST /apps/app/users/eval-cli-user/sessions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49948 - "POST /apps/app/users/eval-cli-user/sessions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49962 - "POST /apps/app/users/eval-cli-user/sessions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49976 - "POST /run_sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49990 - "POST /run_sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50002 - "POST /run_sse HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [328482]
+=== Starting server at 2026-09-23T19:09:21.120831+00:00 ===
+Command: uv run uvicorn app.fast_api_app:app --host 127.0.0.1 --port 18080
+CWD: /config/Desktop/BuildWithGemini
+=== Started server process 335797 ===
+warning: `VIRTUAL_ENV=/lsiopy` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead
+/config/Desktop/BuildWithGemini/.venv/lib/python3.13/site-packages/google/adk/cli/fast_api.py:278: UserWarning: [EXPERIMENTAL] InMemoryCredentialService: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.
+  credential_service = InMemoryCredentialService()
+/config/Desktop/BuildWithGemini/.venv/lib/python3.13/site-packages/google/adk/auth/credential_service/in_memory_credential_service.py:33: UserWarning: [EXPERIMENTAL] BaseCredentialService: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.
+  super().__init__()
+INFO:     Started server process [335800]
+INFO:     Waiting for application startup.
+/config/Desktop/BuildWithGemini/app/app_utils/a2a.py:169: UserWarning: [EXPERIMENTAL] AgentCardBuilder: ADK Implementation for A2A support (A2aAgentExecutor, RemoteA2aAgent and corresponding supporting components etc.) is in experimental mode and is subject to breaking changes. A2A protocol and SDK are themselves not experimental. Once it's stable enough the experimental mode will be removed. Your feedback is welcome.
+  agent_card = await AgentCardBuilder(
+/config/Desktop/BuildWithGemini/app/app_utils/a2a.py:177: UserWarning: [EXPERIMENTAL] A2aAgentExecutor: ADK Implementation for A2A support (A2aAgentExecutor, RemoteA2aAgent and corresponding supporting components etc.) is in experimental mode and is subject to breaking changes. A2A protocol and SDK are themselves not experimental. Once it's stable enough the experimental mode will be removed. Your feedback is welcome.
+  agent_executor=A2aAgentExecutor(runner=runner),
+/config/Desktop/BuildWithGemini/.venv/lib/python3.13/site-packages/google/adk/a2a/executor/a2a_agent_executor.py:76: UserWarning: [EXPERIMENTAL] A2aAgentExecutorConfig: ADK Implementation for A2A support (A2aAgentExecutor, RemoteA2aAgent and corresponding supporting components etc.) is in experimental mode and is subject to breaking changes. A2A protocol and SDK are themselves not experimental. Once it's stable enough the experimental mode will be removed. Your feedback is welcome.
+  self._config = config or A2aAgentExecutorConfig()
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:18080 (Press CTRL+C to quit)
+INFO:     127.0.0.1:58232 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:58236 - "GET /dev-ui/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58246 - "POST /apps/app/users/cli-user/sessions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58256 - "POST /run_sse HTTP/1.1" 200 OK
+/config/Desktop/BuildWithGemini/.venv/lib/python3.13/site-packages/google/adk/models/llm_request.py:298: UserWarning: [EXPERIMENTAL] feature FeatureName.JSON_SCHEMA_FOR_FUNC_DECL is enabled.
+  declaration = tool._get_declaration()
+Tools at indices [0] are not compatible with automatic function calling (AFC). AFC is disabled. If AFC is intended, please include python callables in the tool list, and do not include function declaration and MCP server in the tool list.
+Tools at indices [0] are not compatible with automatic function calling (AFC). AFC is disabled. If AFC is intended, please include python callables in the tool list, and do not include function declaration and MCP server in the tool list.
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [335800]
+=== Starting server at 2026-09-23T19:23:12.817440+00:00 ===
+Command: uv run uvicorn app.fast_api_app:app --host 127.0.0.1 --port 18080
+CWD: /config/Desktop/BuildWithGemini
+=== Started server process 339510 ===
+warning: `VIRTUAL_ENV=/lsiopy` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead
+/config/Desktop/BuildWithGemini/.venv/lib/python3.13/site-packages/google/adk/cli/fast_api.py:278: UserWarning: [EXPERIMENTAL] InMemoryCredentialService: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.
+  credential_service = InMemoryCredentialService()
+/config/Desktop/BuildWithGemini/.venv/lib/python3.13/site-packages/google/adk/auth/credential_service/in_memory_credential_service.py:33: UserWarning: [EXPERIMENTAL] BaseCredentialService: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.
+  super().__init__()
+INFO:     Started server process [339515]
+INFO:     Waiting for application startup.
+/config/Desktop/BuildWithGemini/app/app_utils/a2a.py:169: UserWarning: [EXPERIMENTAL] AgentCardBuilder: ADK Implementation for A2A support (A2aAgentExecutor, RemoteA2aAgent and corresponding supporting components etc.) is in experimental mode and is subject to breaking changes. A2A protocol and SDK are themselves not experimental. Once it's stable enough the experimental mode will be removed. Your feedback is welcome.
+  agent_card = await AgentCardBuilder(
+/config/Desktop/BuildWithGemini/app/app_utils/a2a.py:177: UserWarning: [EXPERIMENTAL] A2aAgentExecutor: ADK Implementation for A2A support (A2aAgentExecutor, RemoteA2aAgent and corresponding supporting components etc.) is in experimental mode and is subject to breaking changes. A2A protocol and SDK are themselves not experimental. Once it's stable enough the experimental mode will be removed. Your feedback is welcome.
+  agent_executor=A2aAgentExecutor(runner=runner),
+/config/Desktop/BuildWithGemini/.venv/lib/python3.13/site-packages/google/adk/a2a/executor/a2a_agent_executor.py:76: UserWarning: [EXPERIMENTAL] A2aAgentExecutorConfig: ADK Implementation for A2A support (A2aAgentExecutor, RemoteA2aAgent and corresponding supporting components etc.) is in experimental mode and is subject to breaking changes. A2A protocol and SDK are themselves not experimental. Once it's stable enough the experimental mode will be removed. Your feedback is welcome.
+  self._config = config or A2aAgentExecutorConfig()
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:18080 (Press CTRL+C to quit)
+INFO:     127.0.0.1:59974 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:59984 - "GET /dev-ui/ HTTP/1.1" 200 OK
+/config/Desktop/BuildWithGemini/.venv/lib/python3.13/site-packages/fastapi/routing.py:352: UserWarning: [EXPERIMENTAL] get_adk_app_info: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.
+  return await dependant.call(**values)
+/config/Desktop/BuildWithGemini/.venv/lib/python3.13/site-packages/google/adk/utils/agent_info.py:59: UserWarning: [EXPERIMENTAL] feature FeatureName.JSON_SCHEMA_FOR_FUNC_DECL is enabled.
+  declarations = (tool._get_declaration() for tool in final_tools)
+INFO:     127.0.0.1:60000 - "GET /apps/app/app-info HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60004 - "POST /apps/app/users/eval-cli-user/sessions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60014 - "POST /apps/app/users/eval-cli-user/sessions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60018 - "POST /apps/app/users/eval-cli-user/sessions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60034 - "POST /run_sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60044 - "POST /run_sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60050 - "POST /run_sse HTTP/1.1" 200 OK
+/config/Desktop/BuildWithGemini/.venv/lib/python3.13/site-packages/google/adk/memory/vertex_ai_memory_bank_service.py:645: FutureWarning: The vertexai.Client class is deprecated. Please use agentplatform.Client instead.
+  return vertexai.Client(
+WARNING:root:Failed to preload memory for query: Hello, what can you help me with?
+WARNING:google_genai.models:Tools at indices [0] are not compatible with automatic function calling (AFC). AFC is disabled. If AFC is intended, please include python callables in the tool list, and do not include function declaration and MCP server in the tool list.
+WARNING:root:Failed to preload memory for query: What's the weather like in San Francisco?
+WARNING:google_genai.models:Tools at indices [0] are not compatible with automatic function calling (AFC). AFC is disabled. If AFC is intended, please include python callables in the tool list, and do not include function declaration and MCP server in the tool list.
+WARNING:root:Failed to preload memory for query: What is the capital of France?
+WARNING:google_genai.models:Tools at indices [0] are not compatible with automatic function calling (AFC). AFC is disabled. If AFC is intended, please include python callables in the tool list, and do not include function declaration and MCP server in the tool list.
+ERROR:google_adk.google.adk.memory.vertex_ai_memory_bank_service:Background ingest_events task failed: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'The ReasoningEngine does not exist.', 'status': 'NOT_FOUND'}}
+ERROR:google_adk.google.adk.memory.vertex_ai_memory_bank_service:Background ingest_events task failed: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'The ReasoningEngine does not exist.', 'status': 'NOT_FOUND'}}
+WARNING:root:Failed to preload memory for query: What's the weather like in San Francisco?
+WARNING:google_genai.models:Tools at indices [0] are not compatible with automatic function calling (AFC). AFC is disabled. If AFC is intended, please include python callables in the tool list, and do not include function declaration and MCP server in the tool list.
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [339515]
+=== Starting server at 2026-09-23T19:35:09.491501+00:00 ===
+Command: uv run uvicorn app.fast_api_app:app --host 127.0.0.1 --port 18080
+CWD: /config/Desktop/BuildWithGemini
+=== Started server process 343000 ===
+warning: `VIRTUAL_ENV=/lsiopy` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead
+/config/Desktop/BuildWithGemini/.venv/lib/python3.13/site-packages/google/adk/cli/fast_api.py:278: UserWarning: [EXPERIMENTAL] InMemoryCredentialService: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.
+  credential_service = InMemoryCredentialService()
+/config/Desktop/BuildWithGemini/.venv/lib/python3.13/site-packages/google/adk/auth/credential_service/in_memory_credential_service.py:33: UserWarning: [EXPERIMENTAL] BaseCredentialService: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.
+  super().__init__()
+INFO:     Started server process [343003]
+INFO:     Waiting for application startup.
+/config/Desktop/BuildWithGemini/app/app_utils/a2a.py:169: UserWarning: [EXPERIMENTAL] AgentCardBuilder: ADK Implementation for A2A support (A2aAgentExecutor, RemoteA2aAgent and corresponding supporting components etc.) is in experimental mode and is subject to breaking changes. A2A protocol and SDK are themselves not experimental. Once it's stable enough the experimental mode will be removed. Your feedback is welcome.
+  agent_card = await AgentCardBuilder(
+/config/Desktop/BuildWithGemini/app/app_utils/a2a.py:177: UserWarning: [EXPERIMENTAL] A2aAgentExecutor: ADK Implementation for A2A support (A2aAgentExecutor, RemoteA2aAgent and corresponding supporting components etc.) is in experimental mode and is subject to breaking changes. A2A protocol and SDK are themselves not experimental. Once it's stable enough the experimental mode will be removed. Your feedback is welcome.
+  agent_executor=A2aAgentExecutor(runner=runner),
+/config/Desktop/BuildWithGemini/.venv/lib/python3.13/site-packages/google/adk/a2a/executor/a2a_agent_executor.py:76: UserWarning: [EXPERIMENTAL] A2aAgentExecutorConfig: ADK Implementation for A2A support (A2aAgentExecutor, RemoteA2aAgent and corresponding supporting components etc.) is in experimental mode and is subject to breaking changes. A2A protocol and SDK are themselves not experimental. Once it's stable enough the experimental mode will be removed. Your feedback is welcome.
+  self._config = config or A2aAgentExecutorConfig()
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:18080 (Press CTRL+C to quit)
+INFO:     127.0.0.1:59608 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:59612 - "GET /dev-ui/ HTTP/1.1" 200 OK
+/config/Desktop/BuildWithGemini/.venv/lib/python3.13/site-packages/fastapi/routing.py:352: UserWarning: [EXPERIMENTAL] get_adk_app_info: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.
+  return await dependant.call(**values)
+/config/Desktop/BuildWithGemini/.venv/lib/python3.13/site-packages/google/adk/utils/agent_info.py:59: UserWarning: [EXPERIMENTAL] feature FeatureName.JSON_SCHEMA_FOR_FUNC_DECL is enabled.
+  declarations = (tool._get_declaration() for tool in final_tools)
+INFO:     127.0.0.1:59620 - "GET /apps/app/app-info HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59628 - "POST /apps/app/users/eval-cli-user/sessions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59636 - "POST /apps/app/users/eval-cli-user/sessions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59644 - "POST /apps/app/users/eval-cli-user/sessions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59660 - "POST /run_sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59670 - "POST /run_sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59674 - "POST /run_sse HTTP/1.1" 200 OK
+/config/Desktop/BuildWithGemini/.venv/lib/python3.13/site-packages/google/adk/memory/vertex_ai_memory_bank_service.py:645: FutureWarning: The vertexai.Client class is deprecated. Please use agentplatform.Client instead.
+  return vertexai.Client(
+Tools at indices [0] are not compatible with automatic function calling (AFC). AFC is disabled. If AFC is intended, please include python callables in the tool list, and do not include function declaration and MCP server in the tool list.
+Tools at indices [0] are not compatible with automatic function calling (AFC). AFC is disabled. If AFC is intended, please include python callables in the tool list, and do not include function declaration and MCP server in the tool list.
+Tools at indices [0] are not compatible with automatic function calling (AFC). AFC is disabled. If AFC is intended, please include python callables in the tool list, and do not include function declaration and MCP server in the tool list.
+Tools at indices [0] are not compatible with automatic function calling (AFC). AFC is disabled. If AFC is intended, please include python callables in the tool list, and do not include function declaration and MCP server in the tool list.
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [343003]
+=== Starting server at 2026-09-23T19:45:44.101562+00:00 ===
+Command: uv run uvicorn app.fast_api_app:app --host 127.0.0.1 --port 18080
+CWD: /config/Desktop/BuildWithGemini
+=== Started server process 346141 ===
+warning: `VIRTUAL_ENV=/lsiopy` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead
+/config/Desktop/BuildWithGemini/.venv/lib/python3.13/site-packages/google/adk/cli/fast_api.py:278: UserWarning: [EXPERIMENTAL] InMemoryCredentialService: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.
+  credential_service = InMemoryCredentialService()
+/config/Desktop/BuildWithGemini/.venv/lib/python3.13/site-packages/google/adk/auth/credential_service/in_memory_credential_service.py:33: UserWarning: [EXPERIMENTAL] BaseCredentialService: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.
+  super().__init__()
+INFO:     Started server process [346144]
+INFO:     Waiting for application startup.
+/config/Desktop/BuildWithGemini/app/app_utils/a2a.py:169: UserWarning: [EXPERIMENTAL] AgentCardBuilder: ADK Implementation for A2A support (A2aAgentExecutor, RemoteA2aAgent and corresponding supporting components etc.) is in experimental mode and is subject to breaking changes. A2A protocol and SDK are themselves not experimental. Once it's stable enough the experimental mode will be removed. Your feedback is welcome.
+  agent_card = await AgentCardBuilder(
+/config/Desktop/BuildWithGemini/app/app_utils/a2a.py:177: UserWarning: [EXPERIMENTAL] A2aAgentExecutor: ADK Implementation for A2A support (A2aAgentExecutor, RemoteA2aAgent and corresponding supporting components etc.) is in experimental mode and is subject to breaking changes. A2A protocol and SDK are themselves not experimental. Once it's stable enough the experimental mode will be removed. Your feedback is welcome.
+  agent_executor=A2aAgentExecutor(runner=runner),
+/config/Desktop/BuildWithGemini/.venv/lib/python3.13/site-packages/google/adk/a2a/executor/a2a_agent_executor.py:76: UserWarning: [EXPERIMENTAL] A2aAgentExecutorConfig: ADK Implementation for A2A support (A2aAgentExecutor, RemoteA2aAgent and corresponding supporting components etc.) is in experimental mode and is subject to breaking changes. A2A protocol and SDK are themselves not experimental. Once it's stable enough the experimental mode will be removed. Your feedback is welcome.
+  self._config = config or A2aAgentExecutorConfig()
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:18080 (Press CTRL+C to quit)
+INFO:     127.0.0.1:47538 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:47552 - "GET /dev-ui/ HTTP/1.1" 200 OK
+/config/Desktop/BuildWithGemini/.venv/lib/python3.13/site-packages/fastapi/routing.py:352: UserWarning: [EXPERIMENTAL] get_adk_app_info: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.
+  return await dependant.call(**values)
+/config/Desktop/BuildWithGemini/.venv/lib/python3.13/site-packages/google/adk/utils/agent_info.py:59: UserWarning: [EXPERIMENTAL] feature FeatureName.JSON_SCHEMA_FOR_FUNC_DECL is enabled.
+  declarations = (tool._get_declaration() for tool in final_tools)
+INFO:     127.0.0.1:47558 - "GET /apps/app/app-info HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47570 - "POST /apps/app/users/eval-cli-user/sessions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47576 - "POST /apps/app/users/eval-cli-user/sessions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47582 - "POST /apps/app/users/eval-cli-user/sessions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47588 - "POST /run_sse HTTP/1.1" 200 OK
+/config/Desktop/BuildWithGemini/.venv/lib/python3.13/site-packages/google/adk/memory/vertex_ai_memory_bank_service.py:645: FutureWarning: The vertexai.Client class is deprecated. Please use agentplatform.Client instead.
+  return vertexai.Client(
+INFO:     127.0.0.1:47600 - "POST /run_sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47604 - "POST /run_sse HTTP/1.1" 200 OK
+Tools at indices [0] are not compatible with automatic function calling (AFC). AFC is disabled. If AFC is intended, please include python callables in the tool list, and do not include function declaration and MCP server in the tool list.
+Tools at indices [0] are not compatible with automatic function calling (AFC). AFC is disabled. If AFC is intended, please include python callables in the tool list, and do not include function declaration and MCP server in the tool list.
+Tools at indices [0] are not compatible with automatic function calling (AFC). AFC is disabled. If AFC is intended, please include python callables in the tool list, and do not include function declaration and MCP server in the tool list.
+Tools at indices [0] are not compatible with automatic function calling (AFC). AFC is disabled. If AFC is intended, please include python callables in the tool list, and do not include function declaration and MCP server in the tool list.
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [346144]
+=== Starting server at 2026-09-23T19:46:13.745566+00:00 ===
+Command: uv run uvicorn app.fast_api_app:app --host 127.0.0.1 --port 18081
+CWD: /config/Desktop/BuildWithGemini
+=== Started server process 346338 ===
+warning: `VIRTUAL_ENV=/lsiopy` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead
+/config/Desktop/BuildWithGemini/.venv/lib/python3.13/site-packages/google/adk/cli/fast_api.py:278: UserWarning: [EXPERIMENTAL] InMemoryCredentialService: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.
+  credential_service = InMemoryCredentialService()
+/config/Desktop/BuildWithGemini/.venv/lib/python3.13/site-packages/google/adk/auth/credential_service/in_memory_credential_service.py:33: UserWarning: [EXPERIMENTAL] BaseCredentialService: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.
+  super().__init__()
+INFO:     Started server process [346341]
+INFO:     Waiting for application startup.
+/config/Desktop/BuildWithGemini/app/app_utils/a2a.py:169: UserWarning: [EXPERIMENTAL] AgentCardBuilder: ADK Implementation for A2A support (A2aAgentExecutor, RemoteA2aAgent and corresponding supporting components etc.) is in experimental mode and is subject to breaking changes. A2A protocol and SDK are themselves not experimental. Once it's stable enough the experimental mode will be removed. Your feedback is welcome.
+  agent_card = await AgentCardBuilder(
+/config/Desktop/BuildWithGemini/app/app_utils/a2a.py:177: UserWarning: [EXPERIMENTAL] A2aAgentExecutor: ADK Implementation for A2A support (A2aAgentExecutor, RemoteA2aAgent and corresponding supporting components etc.) is in experimental mode and is subject to breaking changes. A2A protocol and SDK are themselves not experimental. Once it's stable enough the experimental mode will be removed. Your feedback is welcome.
+  agent_executor=A2aAgentExecutor(runner=runner),
+/config/Desktop/BuildWithGemini/.venv/lib/python3.13/site-packages/google/adk/a2a/executor/a2a_agent_executor.py:76: UserWarning: [EXPERIMENTAL] A2aAgentExecutorConfig: ADK Implementation for A2A support (A2aAgentExecutor, RemoteA2aAgent and corresponding supporting components etc.) is in experimental mode and is subject to breaking changes. A2A protocol and SDK are themselves not experimental. Once it's stable enough the experimental mode will be removed. Your feedback is welcome.
+  self._config = config or A2aAgentExecutorConfig()
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:18081 (Press CTRL+C to quit)
+INFO:     127.0.0.1:47316 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:47322 - "GET /dev-ui/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47332 - "POST /apps/app/users/cli-user/sessions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47338 - "POST /run_sse HTTP/1.1" 200 OK
+/config/Desktop/BuildWithGemini/.venv/lib/python3.13/site-packages/google/adk/models/llm_request.py:298: UserWarning: [EXPERIMENTAL] feature FeatureName.JSON_SCHEMA_FOR_FUNC_DECL is enabled.
+  declaration = tool._get_declaration()
+/config/Desktop/BuildWithGemini/.venv/lib/python3.13/site-packages/google/adk/memory/vertex_ai_memory_bank_service.py:645: FutureWarning: The vertexai.Client class is deprecated. Please use agentplatform.Client instead.
+  return vertexai.Client(
+Tools at indices [0] are not compatible with automatic function calling (AFC). AFC is disabled. If AFC is intended, please include python callables in the tool list, and do not include function declaration and MCP server in the tool list.
+Tools at indices [0] are not compatible with automatic function calling (AFC). AFC is disabled. If AFC is intended, please include python callables in the tool list, and do not include function declaration and MCP server in the tool list.
+Tools at indices [0] are not compatible with automatic function calling (AFC). AFC is disabled. If AFC is intended, please include python callables in the tool list, and do not include function declaration and MCP server in the tool list.
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [346341]
+=== Starting server at 2026-09-23T20:02:02.507975+00:00 ===
+Command: uv run uvicorn app.fast_api_app:app --host 127.0.0.1 --port 18080
+CWD: /config/Desktop/BuildWithGemini
+=== Started server process 350735 ===
+warning: `VIRTUAL_ENV=/lsiopy` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead
+/config/Desktop/BuildWithGemini/.venv/lib/python3.13/site-packages/google/adk/cli/fast_api.py:278: UserWarning: [EXPERIMENTAL] InMemoryCredentialService: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.
+  credential_service = InMemoryCredentialService()
+/config/Desktop/BuildWithGemini/.venv/lib/python3.13/site-packages/google/adk/auth/credential_service/in_memory_credential_service.py:33: UserWarning: [EXPERIMENTAL] BaseCredentialService: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.
+  super().__init__()
+INFO:     Started server process [350738]
+INFO:     Waiting for application startup.
+/config/Desktop/BuildWithGemini/app/app_utils/a2a.py:169: UserWarning: [EXPERIMENTAL] AgentCardBuilder: ADK Implementation for A2A support (A2aAgentExecutor, RemoteA2aAgent and corresponding supporting components etc.) is in experimental mode and is subject to breaking changes. A2A protocol and SDK are themselves not experimental. Once it's stable enough the experimental mode will be removed. Your feedback is welcome.
+  agent_card = await AgentCardBuilder(
+/config/Desktop/BuildWithGemini/app/app_utils/a2a.py:177: UserWarning: [EXPERIMENTAL] A2aAgentExecutor: ADK Implementation for A2A support (A2aAgentExecutor, RemoteA2aAgent and corresponding supporting components etc.) is in experimental mode and is subject to breaking changes. A2A protocol and SDK are themselves not experimental. Once it's stable enough the experimental mode will be removed. Your feedback is welcome.
+  agent_executor=A2aAgentExecutor(runner=runner),
+/config/Desktop/BuildWithGemini/.venv/lib/python3.13/site-packages/google/adk/a2a/executor/a2a_agent_executor.py:76: UserWarning: [EXPERIMENTAL] A2aAgentExecutorConfig: ADK Implementation for A2A support (A2aAgentExecutor, RemoteA2aAgent and corresponding supporting components etc.) is in experimental mode and is subject to breaking changes. A2A protocol and SDK are themselves not experimental. Once it's stable enough the experimental mode will be removed. Your feedback is welcome.
+  self._config = config or A2aAgentExecutorConfig()
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:18080 (Press CTRL+C to quit)
+INFO:     127.0.0.1:48768 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:48784 - "GET /dev-ui/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48800 - "POST /apps/app/users/cli-user/sessions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48816 - "POST /run_sse HTTP/1.1" 200 OK
+/config/Desktop/BuildWithGemini/.venv/lib/python3.13/site-packages/google/adk/models/llm_request.py:298: UserWarning: [EXPERIMENTAL] feature FeatureName.JSON_SCHEMA_FOR_FUNC_DECL is enabled.
+  declaration = tool._get_declaration()
+/config/Desktop/BuildWithGemini/.venv/lib/python3.13/site-packages/google/adk/memory/vertex_ai_memory_bank_service.py:645: FutureWarning: The vertexai.Client class is deprecated. Please use agentplatform.Client instead.
+  return vertexai.Client(
+Tools at indices [0] are not compatible with automatic function calling (AFC). AFC is disabled. If AFC is intended, please include python callables in the tool list, and do not include function declaration and MCP server in the tool list.
+Direct use of automatic function calling (AFC) in Models.generate_content is not recommended. Instead, we recommend to use AFC in Chat.send_message. Similarly, direct use of AFC in Models.generate_content_stream is not recommended. Instead, we recommend to use AFC in Chat.send_message_stream.
+Tools at indices [0] are not compatible with automatic function calling (AFC). AFC is disabled. If AFC is intended, please include python callables in the tool list, and do not include function declaration and MCP server in the tool list.
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [350738]
+=== Starting server at 2026-09-23T20:02:45.279898+00:00 ===
+Command: uv run uvicorn app.fast_api_app:app --host 127.0.0.1 --port 18081
+CWD: /config/Desktop/BuildWithGemini
+=== Started server process 350953 ===
+warning: `VIRTUAL_ENV=/lsiopy` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead
+/config/Desktop/BuildWithGemini/.venv/lib/python3.13/site-packages/google/adk/cli/fast_api.py:278: UserWarning: [EXPERIMENTAL] InMemoryCredentialService: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.
+  credential_service = InMemoryCredentialService()
+/config/Desktop/BuildWithGemini/.venv/lib/python3.13/site-packages/google/adk/auth/credential_service/in_memory_credential_service.py:33: UserWarning: [EXPERIMENTAL] BaseCredentialService: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.
+  super().__init__()
+INFO:     Started server process [350956]
+INFO:     Waiting for application startup.
+/config/Desktop/BuildWithGemini/app/app_utils/a2a.py:169: UserWarning: [EXPERIMENTAL] AgentCardBuilder: ADK Implementation for A2A support (A2aAgentExecutor, RemoteA2aAgent and corresponding supporting components etc.) is in experimental mode and is subject to breaking changes. A2A protocol and SDK are themselves not experimental. Once it's stable enough the experimental mode will be removed. Your feedback is welcome.
+  agent_card = await AgentCardBuilder(
+/config/Desktop/BuildWithGemini/app/app_utils/a2a.py:177: UserWarning: [EXPERIMENTAL] A2aAgentExecutor: ADK Implementation for A2A support (A2aAgentExecutor, RemoteA2aAgent and corresponding supporting components etc.) is in experimental mode and is subject to breaking changes. A2A protocol and SDK are themselves not experimental. Once it's stable enough the experimental mode will be removed. Your feedback is welcome.
+  agent_executor=A2aAgentExecutor(runner=runner),
+/config/Desktop/BuildWithGemini/.venv/lib/python3.13/site-packages/google/adk/a2a/executor/a2a_agent_executor.py:76: UserWarning: [EXPERIMENTAL] A2aAgentExecutorConfig: ADK Implementation for A2A support (A2aAgentExecutor, RemoteA2aAgent and corresponding supporting components etc.) is in experimental mode and is subject to breaking changes. A2A protocol and SDK are themselves not experimental. Once it's stable enough the experimental mode will be removed. Your feedback is welcome.
+  self._config = config or A2aAgentExecutorConfig()
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:18081 (Press CTRL+C to quit)
+INFO:     127.0.0.1:33066 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:33074 - "GET /dev-ui/ HTTP/1.1" 200 OK
+/config/Desktop/BuildWithGemini/.venv/lib/python3.13/site-packages/fastapi/routing.py:352: UserWarning: [EXPERIMENTAL] get_adk_app_info: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.
+  return await dependant.call(**values)
+/config/Desktop/BuildWithGemini/.venv/lib/python3.13/site-packages/google/adk/utils/agent_info.py:59: UserWarning: [EXPERIMENTAL] feature FeatureName.JSON_SCHEMA_FOR_FUNC_DECL is enabled.
+  declarations = (tool._get_declaration() for tool in final_tools)
+INFO:     127.0.0.1:33082 - "GET /apps/app/app-info HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33094 - "POST /apps/app/users/eval-cli-user/sessions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33100 - "POST /apps/app/users/eval-cli-user/sessions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33116 - "POST /apps/app/users/eval-cli-user/sessions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33130 - "POST /run_sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33142 - "POST /run_sse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33140 - "POST /run_sse HTTP/1.1" 200 OK
+/config/Desktop/BuildWithGemini/.venv/lib/python3.13/site-packages/google/adk/memory/vertex_ai_memory_bank_service.py:645: FutureWarning: The vertexai.Client class is deprecated. Please use agentplatform.Client instead.
+  return vertexai.Client(
+Tools at indices [0] are not compatible with automatic function calling (AFC). AFC is disabled. If AFC is intended, please include python callables in the tool list, and do not include function declaration and MCP server in the tool list.
+Tools at indices [0] are not compatible with automatic function calling (AFC). AFC is disabled. If AFC is intended, please include python callables in the tool list, and do not include function declaration and MCP server in the tool list.
+Tools at indices [0] are not compatible with automatic function calling (AFC). AFC is disabled. If AFC is intended, please include python callables in the tool list, and do not include function declaration and MCP server in the tool list.
+Tools at indices [0] are not compatible with automatic function calling (AFC). AFC is disabled. If AFC is intended, please include python callables in the tool list, and do not include function declaration and MCP server in the tool list.
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [350956]
